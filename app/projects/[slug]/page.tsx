@@ -259,7 +259,7 @@ export default async function ProjectPage({
                   rel="noopener noreferrer"
                   className="inline-flex shrink-0 items-center justify-center rounded-full border border-violet-400/30 bg-violet-500/10 px-5 py-3 text-sm font-semibold text-violet-200 transition hover:border-violet-300/50 hover:bg-violet-500/20 hover:text-white"
                 >
-                  View on version control platform
+                  View
                   <span className="ml-2">↗</span>
                 </a>
               </div>
