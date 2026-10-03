@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import profileImage from "../public/profile.jpg";
 
 const stats = [
@@ -148,9 +149,11 @@ export default function Home() {
                 <div className="relative flex h-full items-center justify-center rounded-[1.5rem] border border-white/10 bg-[#0b1020]">
 
                   <div className="flex h-48 w-40 items-center justify-center rounded-full border border-violet-400/40 bg-gradient-to-br from-violet-500 via-purple-500 to-cyan-400 p-1 shadow-[0_0_35px_rgba(168,85,247,0.7)]">
-                    <img
-                      src={profileImage.src}
+                    <Image
+                      src={profileImage}
                       alt="Harnish Prajapati"
+                      width={160}
+                      height={192}
                       className="h-full w-full rounded-full object-cover"
                     />
                   </div>

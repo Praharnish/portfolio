@@ -1,23 +1,29 @@
 # Tasks & Progress
 
 ## Completed
-- [x] Initialize Next.js portfolio project
-- [x] Create a starter portfolio homepage
-- [x] Apply dark-themed visual redesign
-- [x] Add hero, about, skills, projects, and contact sections
-- [x] Verify project builds successfully
 
-## In progress
-- [ ] Replace sample project and contact content with real portfolio details
-- [ ] Add personal photo or avatar asset
-- [ ] Add social links and resume section
+- [x] Initialize the Next.js App Router portfolio project.
+- [x] Create the responsive homepage with hero, About, Career, Skills, Projects, career direction, Contact, and footer sections.
+- [x] Add the real owner name, profile image, skills, contact email, and featured project content.
+- [x] Add dynamic project pages for the three featured projects.
+- [x] Add repository links and project technologies/highlights.
+- [x] Apply the dark visual system and responsive layouts.
+- [x] Confirm that `npm run build` completes successfully.
+- [x] Bring project documentation in line with the current implementation.
 
-## Planned
-- [ ] Create dedicated project detail pages
-- [ ] Add real case studies and project descriptions
-- [ ] Improve SEO metadata and social preview tags
-- [ ] Add contact form or external form link
-- [ ] Optimize performance and final polishing
+## Open issues
 
-## Notes
-This project is currently structured as a strong personal portfolio starter. The next step is to tailor the content to the real owner and final project profile.
+- [ ] Normalize the body font so the configured Geist font is used consistently.
+
+## Planned enhancements
+
+- [ ] Improve metadata with canonical, Open Graph, and social preview values.
+- [ ] Add measurable outcomes and richer media to project case studies.
+- [ ] Add professional social links and a resume download.
+- [ ] Decide whether a contact form is warranted and select a privacy-conscious service if it is.
+- [ ] Move project and profile content into dedicated data modules when the page becomes difficult to maintain.
+- [ ] Run a final responsive, accessibility, and performance review before deployment.
+
+## Validation snapshot
+
+As of the latest review, both `npm run lint` and `npm run build` pass successfully. The remaining open issue is the global body font fallback documented in `Doc/design.md`.

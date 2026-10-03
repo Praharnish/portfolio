@@ -1,41 +1,45 @@
 # UI/UX Direction
 
-## 1. Design vision
-The portfolio should feel premium, modern, and confident. The intent is to present the creator as a thoughtful digital professional with a strong eye for detail and user experience.
+## Design intent
 
-## 2. Visual style
-- Dark-first theme with deep navy/black surfaces
-- Violet and cyan accents for highlights and depth
-- Large typography with strong hierarchy
-- Rounded cards and soft shadowing for a polished feel
-- Minimal, breathable layouts with clear spacing
+The portfolio should make Harnish Prajapati's technical direction legible within the first screen, then give visitors a quick path from background to skills, projects, career goals, and contact. The experience should feel professional and focused rather than like a generic marketing landing page.
 
-## 3. Layout direction
-- Strong hero section at the top with clear value proposition
-- Clean navigation across key sections
-- Sectioned layout: About, Skills, Projects, Contact
-- Spacious, responsive grid system
-- Balanced use of gradients and subtle glow effects
+## Current visual system
 
-## 4. Experience goals
-- Immediate understanding of who the person is
-- Clear story about skills and craftsmanship
-- Easy browsing on both mobile and desktop
-- Strong call-to-action flow toward contact or collaboration
+- Dark navy and near-black page surfaces
+- Violet and cyan accents with occasional amber and orange project accents
+- Large, high-contrast headings and uppercase section labels
+- Rounded panels with translucent borders and restrained shadows
+- Responsive grids that collapse for smaller screens
+- Gradients and soft glow effects used as visual depth, not as content
 
-## 5. Typography
-- Bold headline with tight tracking
-- Clean sans-serif body type for readability
-- Use uppercase labels for micro-copy and section markers
+## Page composition
 
-## 6. Interaction style
-- Soft hover states on buttons and links
-- Gentle shadows and layered gradients
-- Minimal motion, keeping the site feeling premium rather than flashy
+The homepage is ordered as:
 
-## 7. Brand personality
-- Confident
-- Minimal
-- Creative
-- Professional
-- Modern
+1. Navigation and identity
+2. Hero, introduction, profile image, and summary stats
+3. About section
+4. Career development cards
+5. Technical skills
+6. Featured project cards
+7. Current career direction
+8. Contact CTA and footer
+
+Project pages use a focused reading layout: back navigation, category and title, overview, highlights, technologies, repository CTA, career connection, and bottom navigation.
+
+## Typography
+
+The layout uses a bold display hierarchy, readable body copy, and uppercase labels for section markers. Geist is loaded by `app/layout.tsx` and exposed through Tailwind variables; `app/globals.css` currently sets the body fallback to Arial, so typography should be normalized if the intended Geist treatment is required.
+
+## Interaction and accessibility
+
+- Navigation links scroll to homepage sections.
+- Project cards and repository links have visible hover states and keyboard-accessible native link behavior.
+- The profile image has meaningful alternative text.
+- Maintain heading order, readable contrast, visible focus states, and touch-friendly controls as the UI evolves.
+- Keep external repository links explicit and opening in a new tab only where that behavior remains useful.
+
+## Brand personality
+
+Confident, practical, curious, modern, and career-focused. Copy should favor specific evidence of software work over broad claims.

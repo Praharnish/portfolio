@@ -1,27 +1,34 @@
 # Harnish Prajapati | Portfolio
 
-A modern dark-themed personal portfolio website built with Next.js and Tailwind CSS.
+A Next.js portfolio for Harnish Prajapati. The site presents his background, technical skills, selected projects, career direction, and a direct email contact path.
 
-## Overview
-This project presents a clean, professional portfolio experience for showcasing:
-- personal brand and introduction
-- technical skills and strengths
-- selected projects and case studies
-- contact details and collaboration opportunities
+## Live site
 
-## Tech stack
-- Next.js 16
-- React 19
+Production deployment:
+
+<https://portfolio-praharnishs-projects.vercel.app/>
+
+## What is included
+
+- Responsive single-page portfolio homepage
+- About, career, skills, projects, and contact sections
+- Three project detail pages backed by route-based in-file data
+- Repository links for the featured projects
+- Local profile image at `public/profile.jpg`
+- Dark visual system built with Tailwind CSS utilities and global CSS
+
+## Technology
+
+- Next.js `16.3.6` with the App Router
+- React `19.2.8`
 - TypeScript
-- Tailwind CSS
+- Tailwind CSS `4`
+- ESLint 9 with the Next.js Core Web Vitals and TypeScript configurations
 
-## Live demo
+## Requirements
 
-Production site:
-
-```text
-https://portfolio-praharnishs-projects.vercel.app/
-```
+- Node.js and npm compatible with the versions used by Next.js 16
+- A local clone of this repository
 
 ## Getting started
 
@@ -31,26 +38,32 @@ Install dependencies:
 npm install
 ```
 
-Run the app locally:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Open the project in your browser at:
-
-```text
-http://localhost:3000
-```
+Open <http://localhost:3000> in a browser.
 
 ## Scripts
 
-```bash
-npm run dev
-npm run build
-npm run start
-npm run lint
-```
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create an optimized production build |
+| `npm run start` | Serve the production build locally |
+| `npm run lint` | Run ESLint across the project |
+
+## Routes
+
+| Route | Behavior |
+| --- | --- |
+| `/` | Portfolio homepage |
+| `/projects/enterprise-web-api` | Enterprise Web API case-study page |
+| `/projects/interactive-recipe-book` | Interactive Recipe Book case-study page |
+| `/projects/portfolio-system` | Portfolio case-study page |
+| `/projects/[slug]` | Dynamic project route; unknown slugs render a not-found message |
 
 ## Project structure
 
@@ -60,30 +73,43 @@ portfolio/
 │   ├── globals.css
 │   ├── layout.tsx
 │   ├── page.tsx
-│   └── project
-│       └── [slug]
+│   └── projects/
+│       └── [slug]/
 │           └── page.tsx
 ├── public/
+│   └── profile.jpg
+├── Doc/
 ├── README.md
-├── prd.md
-├── architecture.md
-├── rules.md
-├── design.md
-├── tasks.md
-├── memory.md
 ├── package.json
 ├── tsconfig.json
 ├── next.config.ts
 └── eslint.config.mjs
 ```
 
-## Documentation
-- [prd.md](prd.md) — product requirements
-- [architecture.md](architecture.md) — project architecture
-- [rules.md](rules.md) — coding rules
-- [design.md](design.md) — UI/UX direction
-- [tasks.md](tasks.md) — tasks and progress
-- [memory.md](memory.md) — project context
+## Updating the portfolio
 
-## Notes
-This portfolio is currently a polished starter and is designed to be easily customized with real projects, personal details, and branding content.
+- Edit homepage profile, skills, and project-card content in `app/page.tsx`.
+- Edit project descriptions, technologies, highlights, and repository URLs in `app/projects/[slug]/page.tsx`.
+- Replace the profile image at `public/profile.jpg` while keeping the filename, or update the import in `app/page.tsx`.
+- Update page metadata in `app/layout.tsx`.
+- Keep product and implementation decisions synchronized with the files in `Doc/`.
+
+## Validation
+
+Run both checks before publishing:
+
+```bash
+npm run lint
+npm run build
+```
+
+The production build and ESLint checks currently complete successfully.
+
+## Documentation
+
+- [Product requirements](Doc/prd.md)
+- [Architecture](Doc/architecture.md)
+- [Design direction](Doc/design.md)
+- [Coding rules](Doc/rules.md)
+- [Tasks and progress](Doc/tasks.md)
+- [Project context](Doc/memory.md)

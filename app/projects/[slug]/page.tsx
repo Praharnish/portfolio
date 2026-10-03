@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const projects = {
   "enterprise-web-api": {
     title: "Enterprise Web API",
@@ -131,12 +133,12 @@ export default async function ProjectPage({
     return (
       <main className="min-h-screen bg-[#050816] text-slate-100">
         <div className="mx-auto max-w-5xl px-6 py-12 md:px-10">
-          <a
+          <Link
             href="/#projects"
             className="text-sm text-violet-300 transition hover:text-violet-200"
           >
             ← Back to Projects
-          </a>
+          </Link>
 
           <h1 className="mt-8 text-4xl font-black text-white md:text-6xl">
             Project Not Found
@@ -156,12 +158,12 @@ export default async function ProjectPage({
       <div className="mx-auto max-w-5xl px-6 py-12 md:px-10">
 
         {/* BACK */}
-        <a
+        <Link
           href="/#projects"
           className="text-sm text-violet-300 transition hover:text-violet-200"
         >
           ← Back to Projects
-        </a>
+        </Link>
 
         {/* HEADER */}
         <header className="mt-10">
@@ -249,7 +251,7 @@ export default async function ProjectPage({
 
                   <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
                     Explore the source code, project structure, documentation, and
-                    implementation details on the project's repository.
+                    implementation details on the project&apos;s repository.
                   </p>
                 </div>
 
@@ -288,12 +290,12 @@ export default async function ProjectPage({
 
         {/* BOTTOM NAVIGATION */}
         <div className="mt-12 border-t border-white/10 pt-8">
-          <a
+          <Link
             href="/#projects"
             className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-slate-200 transition hover:border-violet-400/40 hover:bg-white/10"
           >
             ← View All Projects
-          </a>
+          </Link>
         </div>
 
       </div>

@@ -1,41 +1,45 @@
 # Coding Rules
 
-## 1. General principles
-- Keep code simple, readable, and maintainable
-- Favor reusable layouts and small component blocks
-- Keep styles consistent with the existing dark design system
-- Prefer clear names over clever abstractions
+## General principles
 
-## 2. Project conventions
-- Use TypeScript for all app logic
-- Use the App Router pattern in `app/`
-- Keep root pages focused and section-based
-- Use arrays of content objects to structure repeated data
+- Keep changes small, readable, and maintainable.
+- Prefer clear names and direct data flow over clever abstractions.
+- Preserve the existing App Router and Tailwind conventions unless a change has a concrete benefit.
+- Keep portfolio copy specific, professional, and supported by real project work.
 
-## 3. Styling rules
-- Use Tailwind utility classes for most styling
-- Keep design tokens consistent: dark surface, violet/cyan accents, white text
-- Avoid ad-hoc styling that conflicts with the visual system
-- Use accessible contrast and readable typography
+## Project conventions
 
-## 4. Component rules
-- If a block is reused, extract it into a component
-- Avoid deeply nested conditional markup
-- Keep sections small and purposeful
+- Use TypeScript for application code.
+- Keep route files in `app/` and use the App Router.
+- Use arrays or typed objects for repeated content such as skills, projects, highlights, and technologies.
+- Keep static assets in `public/` and update references when filenames change.
+- Use `next/link` for internal navigation and native external links for repositories or email.
 
-## 5. Accessibility rules
-- Ensure text contrast meets readability standards
-- Use semantic HTML for headings, sections, navigation, and links
-- Provide meaningful alt text for images
-- Ensure CTA buttons are visually clear and keyboard-focusable
+## Styling rules
 
-## 6. Quality rules
-- Run the build before considering work complete
-- Keep the app free of TypeScript errors
-- Keep code formatting consistent
-- Update documentation when structure or workflow changes
+- Use Tailwind utility classes for component styling and layout.
+- Keep the dark surface, high-contrast text, and violet/cyan accent language coherent.
+- Reuse existing spacing, border, radius, and hover patterns before introducing new values.
+- Keep responsive behavior explicit at mobile, tablet, and desktop breakpoints.
 
-## 7. Content rules
-- Use professional, concise, and polished language
-- Keep copy focused on clarity and value
-- Avoid placeholder text in the final portfolio
+## Accessibility rules
+
+- Use semantic headings, sections, navigation, and links.
+- Preserve a logical heading hierarchy.
+- Provide meaningful alternative text for images.
+- Maintain readable contrast and visible keyboard focus states.
+- Do not rely on color alone to communicate meaning.
+- Use descriptive link text, especially for external repositories and email actions.
+
+## Quality rules
+
+- Run `npm run build` after application changes.
+- Run `npm run lint` and resolve new errors; distinguish existing warnings from regressions.
+- Keep TypeScript and ESLint output clean before release.
+- Update the relevant files in `Doc/` and `README.md` when routes, workflows, or architecture change.
+
+## Content rules
+
+- Do not leave sample or placeholder content in the production portfolio.
+- Prefer concise descriptions with concrete technologies, responsibilities, and outcomes.
+- Verify repository URLs and contact details before publishing.
