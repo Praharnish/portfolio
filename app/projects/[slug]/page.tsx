@@ -233,11 +233,11 @@ export default async function ProjectPage({
           </div>
         </section>
 
-        {/* REPOSITORY */}
+        {/* PROJECT REPOSITORY */}
         {project.repository && (
           <section className="mt-14">
             <h2 className="text-2xl font-bold text-white">
-              GitHub Repository
+              Project Repository
             </h2>
 
             <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
@@ -249,7 +249,7 @@ export default async function ProjectPage({
 
                   <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
                     Explore the source code, project structure, documentation, and
-                    implementation details on GitHub.
+                    implementation details on the project's repository.
                   </p>
                 </div>
 
@@ -259,7 +259,7 @@ export default async function ProjectPage({
                   rel="noopener noreferrer"
                   className="inline-flex shrink-0 items-center justify-center rounded-full border border-violet-400/30 bg-violet-500/10 px-5 py-3 text-sm font-semibold text-violet-200 transition hover:border-violet-300/50 hover:bg-violet-500/20 hover:text-white"
                 >
-                  View on GitHub
+                  View on version control platform
                   <span className="ml-2">↗</span>
                 </a>
               </div>
