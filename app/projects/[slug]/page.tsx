@@ -3,7 +3,7 @@ const projects = {
     title: "Enterprise Web API",
     category: "Enterprise Web Development",
 
-    github: "https://github.com/Praharnish/inft2201-webdev-enterprise",
+    repository: "https://github.com/Praharnish/inft2201-webdev-enterprise",
 
     description: [
       "Developed a progressive enterprise web application across three assignments, starting with a PHP REST API and evolving into a secure Node.js API architecture.",
@@ -89,7 +89,7 @@ const projects = {
     title: "Developer Portfolio",
     category: "Personal Project",
 
-    github: "https://github.com/Praharnish/portfolio",
+    repository: "https://github.com/Praharnish/portfolio",
 
     description: [
       "Designed and developed a responsive developer portfolio using Next.js, React, TypeScript, and Tailwind CSS.",
@@ -233,8 +233,8 @@ export default async function ProjectPage({
           </div>
         </section>
 
-        {/* GITHUB REPOSITORY */}
-        {project.github && (
+        {/* REPOSITORY */}
+        {project.repository && (
           <section className="mt-14">
             <h2 className="text-2xl font-bold text-white">
               GitHub Repository
@@ -254,7 +254,7 @@ export default async function ProjectPage({
                 </div>
 
                 <a
-                  href={project.github}
+                  href={project.repository}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex shrink-0 items-center justify-center rounded-full border border-violet-400/30 bg-violet-500/10 px-5 py-3 text-sm font-semibold text-violet-200 transition hover:border-violet-300/50 hover:bg-violet-500/20 hover:text-white"
