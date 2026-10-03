@@ -1,30 +1,49 @@
 const projects = {
-  "mail-management-system": {
-    title: "Mail Management System",
-    category: "Full-Stack Application",
+  "enterprise-web-api": {
+    title: "Enterprise Web API",
+    category: "Enterprise Web Development",
+
+    github: "https://github.com/Praharnish/inft2201-webdev-enterprise",
 
     description: [
-      "Developed a full-stack mail-management application with RESTful API endpoints for creating, retrieving, updating, and deleting mail-message data.",
-      "Implemented JWT-based authentication and role-based access control to separate administrator and regular-user functionality.",
-      "Worked with PHP, Node.js, and PostgreSQL while using Docker to create a consistent development environment.",
-      "Applied software testing, debugging, and API troubleshooting practices to identify and resolve application issues.",
+      "Developed a progressive enterprise web application across three assignments, starting with a PHP REST API and evolving into a secure Node.js API architecture.",
+      
+      "Built five RESTful CRUD endpoints for mail-message data using PHP, PostgreSQL, Docker, Composer, and PHPUnit with a test-driven development workflow.",
+      
+      "Implemented JWT-based authentication and role-based access control using a Node.js authentication service and PHP API, separating authentication from data services.",
+      
+      "Developed a security-focused Node.js API using JWT authentication, composable RBAC policies, request logging with UUID trace IDs, configurable rate limiting, and centralized error handling.",
+      
+      "Applied Docker and Docker Compose to containerize the development environments and used prepared SQL statements, automated testing, middleware, and structured error responses to improve reliability and security."
     ],
 
     technologies: [
-      "PHP",
+      "PHP 8.2",
       "Node.js",
+      "JavaScript",
       "PostgreSQL",
-      "JWT",
       "Docker",
+      "Docker Compose",
+      "JWT",
+      "PHPUnit",
+      "Composer",
+      "PSR-4",
       "REST API",
+      "RBAC",
+      "Express Middleware",
+      "React"
     ],
 
     highlights: [
-      "5+ REST API endpoints",
+      "5 RESTful CRUD endpoints",
+      "Test-driven development with PHPUnit",
       "JWT authentication",
       "Role-based access control",
+      "Dockerized services",
       "PostgreSQL database",
-      "Docker development environment",
+      "Request logging & trace IDs",
+      "API rate limiting",
+      "Centralized error handling",
     ],
   },
 
@@ -32,13 +51,14 @@ const projects = {
     title: "Interactive Recipe Book",
     category: "Full-Stack Web & Mobile Application",
 
+    repository: "https://gitlab.com/HPPrajapati2906/interactive-recipe-book-v2",
+
     description: [
       "Developed a full-stack recipe management platform that allows users to create, manage, discover, and interact with recipes.",
       "Built the frontend using React with reusable components, responsive layouts, and client-side routing.",
       "Implemented authentication using JWT and bcrypt, with protected functionality for authenticated users.",
       "Integrated MongoDB for recipe and user data and Cloudinary for recipe-image storage and management.",
       "Developed backend API routes for recipes, authentication, favorites, comments, and image uploads.",
-      "Extended the application to Android using Capacitor and prepared the application for Google Play closed testing.",
     ],
 
     technologies: [
@@ -68,6 +88,8 @@ const projects = {
   "portfolio-system": {
     title: "Developer Portfolio",
     category: "Personal Project",
+
+    github: "https://github.com/Praharnish/portfolio",
 
     description: [
       "Designed and developed a responsive developer portfolio using Next.js, React, TypeScript, and Tailwind CSS.",
@@ -210,6 +232,40 @@ export default async function ProjectPage({
             ))}
           </div>
         </section>
+
+        {/* GITHUB REPOSITORY */}
+        {project.github && (
+          <section className="mt-14">
+            <h2 className="text-2xl font-bold text-white">
+              GitHub Repository
+            </h2>
+
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-lg font-semibold text-white">
+                    View the source code
+                  </p>
+
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
+                    Explore the source code, project structure, documentation, and
+                    implementation details on GitHub.
+                  </p>
+                </div>
+
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-violet-400/30 bg-violet-500/10 px-5 py-3 text-sm font-semibold text-violet-200 transition hover:border-violet-300/50 hover:bg-violet-500/20 hover:text-white"
+                >
+                  View on GitHub
+                  <span className="ml-2">↗</span>
+                </a>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* CAREER CONNECTION */}
         <section className="mt-14 rounded-3xl border border-violet-400/20 bg-gradient-to-r from-violet-500/10 via-slate-900 to-cyan-500/10 p-6 md:p-8">

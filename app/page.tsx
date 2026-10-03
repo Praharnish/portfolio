@@ -26,8 +26,8 @@ const skills = [
 
 const projects = [
   {
-    slug: "mail-management-system",
-    title: "Mail Management System",
+    slug: "enterprise-web-api",
+    title: "Enterprise Web API",
     description:
       "A full-stack application featuring authentication, role-based access control, REST APIs, and database integration.",
     accent: "from-violet-500 to-fuchsia-500",
