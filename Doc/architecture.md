@@ -12,11 +12,13 @@ This is a personal portfolio site built with Next.js App Router and Tailwind CSS
 
 ## 3. Structure
 ```text
-portfolio/
 ├── app/
 │   ├── globals.css
 │   ├── layout.tsx
-│   └── page.tsx
+│   ├── page.tsx
+│   └── project
+│       └── [slug]
+│           └── page.tsx
 ├── public/
 ├── README.md
 ├── package.json
