@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const projects = {
   "enterprise-web-api": {
@@ -7,16 +8,18 @@ const projects = {
 
     repository: "https://github.com/Praharnish/inft2201-webdev-enterprise",
 
+    image: null,
+
     description: [
       "Developed a progressive enterprise web application across three assignments, starting with a PHP REST API and evolving into a secure Node.js API architecture.",
-      
+
       "Built five RESTful CRUD endpoints for mail-message data using PHP, PostgreSQL, Docker, Composer, and PHPUnit with a test-driven development workflow.",
-      
+
       "Implemented JWT-based authentication and role-based access control using a Node.js authentication service and PHP API, separating authentication from data services.",
-      
+
       "Developed a security-focused Node.js API using JWT authentication, composable RBAC policies, request logging with UUID trace IDs, configurable rate limiting, and centralized error handling.",
-      
-      "Applied Docker and Docker Compose to containerize the development environments and used prepared SQL statements, automated testing, middleware, and structured error responses to improve reliability and security."
+
+      "Applied Docker and Docker Compose to containerize the development environments and used prepared SQL statements, automated testing, middleware, and structured error responses to improve reliability and security.",
     ],
 
     technologies: [
@@ -33,7 +36,7 @@ const projects = {
       "REST API",
       "RBAC",
       "Express Middleware",
-      "React"
+      "React",
     ],
 
     highlights: [
@@ -49,31 +52,45 @@ const projects = {
     ],
   },
 
-  "interactive-recipe-book": {
-    title: "Interactive Recipe Book",
-    category: "Full-Stack Web & Mobile Application",
+  "interactive-recipe-book-v2": {
+    title: "Interactive Recipe Book V2",
+    category: "Full-Stack Web Application",
 
-    repository: "https://gitlab.com/HPPrajapati2906/interactive-recipe-book-v2",
+    repository:
+      "https://gitlab.com/HPPrajapati2906/interactive-recipe-book-v2",
+
+    image: "/projects/interactive-recipe-book-v2.jpg",
 
     description: [
-      "Developed a full-stack recipe management platform that allows users to create, manage, discover, and interact with recipes.",
-      "Built the frontend using React with reusable components, responsive layouts, and client-side routing.",
-      "Implemented authentication using JWT and bcrypt, with protected functionality for authenticated users.",
-      "Integrated MongoDB for recipe and user data and Cloudinary for recipe-image storage and management.",
-      "Developed backend API routes for recipes, authentication, favorites, comments, and image uploads.",
+      "Developed a full-stack React application with Node.js serverless APIs and MongoDB, providing dynamic recipe management and data-driven functionality.",
+
+      "Implemented secure authentication using JWT, bcrypt, and Google Sign-In, with role-based access control for protected application features.",
+
+      "Built reusable React components and interactive functionality including live search, category filtering, sorting, pagination, and form validation.",
+
+      "Integrated Cloudinary for recipe image management and connected the application to MongoDB for persistent recipe data.",
+
+      "Implemented API communication between the React frontend and backend services, handling authentication, data retrieval, and recipe operations.",
+
+      "Troubleshot and resolved API, authentication, CORS, environment-variable, and deployment issues through systematic debugging and testing.",
+
+      "Deployed the application using Vercel serverless functions and MongoDB, applying software development practices from development through deployment.",
     ],
 
     technologies: [
-      "React",
+      "React 19",
       "JavaScript",
       "Node.js",
       "MongoDB",
+      "REST APIs",
       "JWT",
       "bcrypt",
+      "Google OAuth",
       "Cloudinary",
-      "REST API",
-      "Capacitor",
-      "Android",
+      "Bootstrap",
+      "React Router",
+      "Vite",
+      "Vercel",
     ],
 
     highlights: [
@@ -83,20 +100,28 @@ const projects = {
       "Cloudinary image storage",
       "Recipe CRUD operations",
       "Favorites & comments",
-      "Android application",
+      "Live search & filtering",
+      "Sorting & pagination",
+      "Form validation",
+      "Vercel deployment",
     ],
   },
 
-  "portfolio-system": {
-    title: "Developer Portfolio",
+  "my-portfolio": {
+    title: "My Portfolio",
     category: "Personal Project",
 
     repository: "https://github.com/Praharnish/portfolio",
 
+    image: null,
+
     description: [
       "Designed and developed a responsive developer portfolio using Next.js, React, TypeScript, and Tailwind CSS.",
+
       "Created reusable project, skills, career, and contact sections to present my development experience and career progression.",
+
       "Implemented dynamic project pages using route-based project data.",
+
       "Focused on responsive design, accessible navigation, reusable components, and a modern developer-focused visual style.",
     ],
 
@@ -114,6 +139,51 @@ const projects = {
       "Responsive UI",
       "Dynamic project pages",
       "Reusable components",
+    ],
+  },
+
+  "super-mario-bros": {
+    title: "Super Mario Bros",
+    category: "Object-Oriented Programming",
+
+    repository: null,
+
+    image: "/projects/super-mario-bros.jpg",
+
+    description: [
+      "Developed a 2D Super Mario Bros-inspired platformer in C# and Unity as a three-person team project, applying object-oriented programming principles to create reusable and maintainable gameplay systems.",
+
+      "Designed an extensible class hierarchy using abstraction, inheritance, polymorphism, and encapsulation for players, enemies, and collectibles.",
+
+      "Implemented player movement, jumping, physics, power-ups, enemy interactions, warp pipes, level transitions, animations, audio management, scoring, lives, and game-state management.",
+
+      "Built a persistent JSON-based leaderboard system that stores player scores and coins across sessions, with dynamically generated UI entries for leaderboard rankings.",
+
+      "Used Unity's New Input System, coroutines, collision detection, custom physics utilities, and scene management to create responsive gameplay and smooth level transitions.",
+    ],
+
+    technologies: [
+      "C#",
+      "Unity",
+      "Unity 2D",
+      "Object-Oriented Programming",
+      "New Input System",
+      "JSON",
+      "Git",
+      "GitHub",
+    ],
+
+    highlights: [
+      "2D platformer gameplay",
+      "Object-oriented class hierarchy",
+      "Abstraction, inheritance & polymorphism",
+      "Player and enemy systems",
+      "Power-ups and collectibles",
+      "Physics and collision detection",
+      "Level transitions",
+      "Persistent JSON leaderboard",
+      "Dynamic UI generation",
+      "Team-based development",
     ],
   },
 };
@@ -176,6 +246,22 @@ export default async function ProjectPage({
           </h1>
         </header>
 
+        {/* PROJECT IMAGE */}
+        {project.image && (
+          <section className="mt-10">
+            <div className="relative aspect-video w-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_20px_60px_rgba(15,23,42,0.5)]">
+              <Image
+                src={project.image}
+                alt={`${project.title} project preview`}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 1024px"
+                className="object-cover"
+              />
+            </div>
+          </section>
+        )}
+
         {/* PROJECT OVERVIEW */}
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-white">
@@ -236,38 +322,39 @@ export default async function ProjectPage({
         </section>
 
         {/* PROJECT REPOSITORY */}
-        {project.repository && (
-          <section className="mt-14">
-            <h2 className="text-2xl font-bold text-white">
-              Project Repository
-            </h2>
+        {project.repository &&
+          project.repository !== null && (
+            <section className="mt-14">
+              <h2 className="text-2xl font-bold text-white">
+                Project Repository
+              </h2>
 
-            <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="text-lg font-semibold text-white">
-                    View the source code
-                  </p>
+              <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <p className="text-lg font-semibold text-white">
+                      View the source code
+                    </p>
 
-                  <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
-                    Explore the source code, project structure, documentation, and
-                    implementation details on the project&apos;s repository.
-                  </p>
+                    <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
+                      Explore the source code, project structure, documentation,
+                      and implementation details on the project&apos;s repository.
+                    </p>
+                  </div>
+
+                  <a
+                    href={project.repository}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex shrink-0 items-center justify-center rounded-full border border-violet-400/30 bg-violet-500/10 px-5 py-3 text-sm font-semibold text-violet-200 transition hover:border-violet-300/50 hover:bg-violet-500/20 hover:text-white"
+                  >
+                    View
+                    <span className="ml-2">↗</span>
+                  </a>
                 </div>
-
-                <a
-                  href={project.repository}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-violet-400/30 bg-violet-500/10 px-5 py-3 text-sm font-semibold text-violet-200 transition hover:border-violet-300/50 hover:bg-violet-500/20 hover:text-white"
-                >
-                  View
-                  <span className="ml-2">↗</span>
-                </a>
               </div>
-            </div>
-          </section>
-        )}
+            </section>
+          )}
 
         {/* CAREER CONNECTION */}
         <section className="mt-14 rounded-3xl border border-violet-400/20 bg-gradient-to-r from-violet-500/10 via-slate-900 to-cyan-500/10 p-6 md:p-8">

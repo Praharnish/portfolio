@@ -32,20 +32,31 @@ const projects = [
     description:
       "A full-stack application featuring authentication, role-based access control, REST APIs, and database integration.",
     accent: "from-violet-500 to-fuchsia-500",
+    image: null,
   },
   {
-    slug: "interactive-recipe-book",
-    title: "Interactive Recipe Book",
+    slug: "interactive-recipe-book-v2",
+    title: "Interactive Recipe Book V2",
     description:
-      "A full-stack recipe platform built with React, Node.js, MongoDB, authentication, Cloudinary, and Android integration.",
+      "A full-stack recipe management application built with React, Node.js, MongoDB, and REST APIs. Features secure authentication, role-based access control, recipe management, live search, filtering, sorting, pagination, image uploads, and form validation. Deployed with Vercel serverless functions, MongoDB, and Cloudinary.",
     accent: "from-cyan-500 to-blue-500",
+    image: "/projects/interactive-recipe-book-v2.jpg",
   },
   {
-    slug: "portfolio-system",
-    title: "Developer Portfolio",
+    slug: "my-portfolio",
+    title: "My Portfolio",
     description:
       "A modern personal portfolio built with Next.js and Tailwind CSS to showcase my projects, skills, and development journey.",
     accent: "from-amber-500 to-orange-500",
+    image: null,
+  },
+  {
+    slug: "super-mario-bros",
+    title: "Super Mario Bros",
+    description:
+      "A 2D platformer developed in C# and Unity featuring object-oriented gameplay systems, player movement, enemies, power-ups, level transitions, scoring, and persistent leaderboards.",
+    accent: "from-red-500 to-orange-500",
+    image: "/projects/super-mario-bros.jpg",
   },
 ];
 
@@ -55,7 +66,7 @@ export default function Home() {
       <main className="mx-auto max-w-6xl px-6 py-8 md:px-10 lg:px-12">
 
         {/* NAVIGATION */}
-        <header className="mb-10 flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-5 py-3 shadow-[0_0_30px_rgba(128,90,213,0.15)] backdrop-blur-xl">
+        <header className="sticky top-4 z-50 mb-10 flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-5 py-3 shadow-[0_0_30px_rgba(128,90,213,0.15)] backdrop-blur-xl">
           <div className="text-lg font-semibold tracking-[0.15em] text-white">
             HARNISH PRAJAPATI
           </div>
@@ -64,14 +75,14 @@ export default function Home() {
             <a href="#about" className="transition hover:text-white">
               About
             </a>
+            <a href="#career" className="transition hover:text-white">
+              Career
+            </a>
             <a href="#skills" className="transition hover:text-white">
               Skills
             </a>
             <a href="#projects" className="transition hover:text-white">
               Projects
-            </a>
-            <a href="#career" className="transition hover:text-white">
-              Career
             </a>
             <a href="#contact" className="transition hover:text-white">
               Contact
@@ -167,7 +178,7 @@ export default function Home() {
         {/* ABOUT */}
         <section
           id="about"
-          className="mt-16 grid gap-6 md:grid-cols-[0.8fr_1.2fr]"
+          className="scroll-mt-24 mt-16 grid gap-6 md:grid-cols-[0.8fr_1.2fr]"
         >
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
@@ -196,7 +207,7 @@ export default function Home() {
         </section>
 
         {/* CAREER DEVELOPMENT */}
-        <section id="career" className="mt-16">
+        <section id="career" className="scroll-mt-24 mt-16">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
             Career Development
           </p>
@@ -263,7 +274,7 @@ export default function Home() {
         </section>
 
         {/* SKILLS */}
-        <section id="skills" className="mt-16">
+        <section id="skills" className="scroll-mt-24 mt-16">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
             Technical Skills
           </p>
@@ -285,7 +296,7 @@ export default function Home() {
         </section>
 
         {/* PROJECTS */}
-        <section id="projects" className="mt-16">
+        <section id="projects" className="scroll-mt-24 mt-16">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
             Projects
           </p>
@@ -307,9 +318,31 @@ export default function Home() {
                 href={`/projects/${project.slug}`}
                 className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_20px_45px_rgba(15,23,42,0.4)] transition hover:-translate-y-1 hover:border-violet-400/30"
               >
-                <div
-                  className={`h-28 bg-gradient-to-r ${project.accent}`}
-                />
+                <div className="relative h-44 overflow-hidden">
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div
+                      className={`flex h-full items-center justify-center bg-gradient-to-r ${project.accent}`}
+                    >
+                      <div className="text-center">
+                        <div className="text-3xl font-black text-white/90">
+                          {project.title.charAt(0)}
+                        </div>
+
+                        <p className="mt-1 text-xs font-medium uppercase tracking-[0.2em] text-white/70">
+                          Project
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
 
                 <div className="p-6">
 
@@ -336,7 +369,7 @@ export default function Home() {
         </section>
 
         {/* WHAT I'M WORKING TOWARD */}
-        <section className="mt-16 rounded-[2rem] border border-white/10 bg-white/5 px-6 py-10 md:px-10">
+        <section className="scroll-mt-24 mt-16 rounded-[2rem] border border-white/10 bg-white/5 px-6 py-10 md:px-10">
 
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
             What I’m Working Toward
@@ -393,7 +426,7 @@ export default function Home() {
         {/* CONTACT */}
         <section
           id="contact"
-          className="mt-16 rounded-[2rem] border border-violet-400/20 bg-gradient-to-r from-violet-500/10 via-slate-900 to-cyan-500/10 px-6 py-10 md:px-10"
+          className="scroll-mt-24 mt-16 rounded-[2rem] border border-violet-400/20 bg-gradient-to-r from-violet-500/10 via-slate-900 to-cyan-500/10 px-6 py-10 md:px-10"
         >
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-200">
             Contact
@@ -424,8 +457,7 @@ export default function Home() {
 
         {/* FOOTER */}
         <footer className="mt-12 border-t border-white/10 py-8 text-center text-sm text-slate-500">
-          © {new Date().getFullYear()} Harnish Prajapati. Built with Next.js
-          and Tailwind CSS.
+          © {new Date().getFullYear()} Harnish Prajapati.
         </footer>
 
       </main>
