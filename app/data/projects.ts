@@ -133,7 +133,7 @@ export const projects: Project[] = [
 
     repository: "https://github.com/Praharnish/portfolio",
 
-    image: null,
+    image: "/projects/my-portfolio.jpg",
     accent: "from-amber-500 to-orange-500",
 
     summary: "A responsive developer portfolio built with Next.js, React, TypeScript, and Tailwind CSS. Features a modern design, dynamic project pages, and a clean visual style.",

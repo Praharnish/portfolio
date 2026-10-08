@@ -50,12 +50,12 @@ export const portfolio = {
     areas: [
       {
         title: "Full-Stack Development",
-        description: "React, Next.js, Node.js, APIs and databases",
+        description: "React, TypeScript, Next.js, Node.js, APIs and databases",
       },
 
       {
         title: "Application Development",
-        description: "Java, C#, Android development and Unity",
+        description: "Java, C#, Dart, Flutter, Android development and Unity",
       },
 
       {
