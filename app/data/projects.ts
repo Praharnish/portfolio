@@ -2,6 +2,7 @@ export type Project = {
   slug: string;
   title: string;
   category: string;
+  date: string | null;
   repository: string | null;
   image: string | null;
   accent: string;
@@ -9,143 +10,38 @@ export type Project = {
   description: string[];
   technologies: string[];
   highlights: string[];
+
+
+  careerConnection: {
+    title: string;
+    description: string;
+  };
 };
 
 export const projects: Project[] = [
-  {
-    slug: "enterprise-web-api",
-    title: "Enterprise Web API",
-    category: "Enterprise Web Development",
 
-    repository:
-      "https://github.com/Praharnish/inft2201-webdev-enterprise",
-
-    image: null,
-    accent: "from-violet-500 to-fuchsia-500",
-
-    summary: "A full-stack recipe management application built with React, Node.js, MongoDB, and REST APIs. Features secure authentication, role-based access control, recipe management, live search, filtering, sorting, pagination, image uploads, and form validation. Deployed with Vercel serverless functions, MongoDB, and Cloudinary.",
-
-    description: [
-      "Developed a progressive enterprise web application across three assignments, starting with a PHP REST API and evolving into a secure Node.js API architecture.",
-
-      "Built five RESTful CRUD endpoints for mail-message data using PHP, PostgreSQL, Docker, Composer, and PHPUnit with a test-driven development workflow.",
-
-      "Implemented JWT-based authentication and role-based access control using a Node.js authentication service and PHP API, separating authentication from data services.",
-
-      "Developed a security-focused Node.js API using JWT authentication, composable RBAC policies, request logging with UUID trace IDs, configurable rate limiting, and centralized error handling.",
-
-      "Applied Docker and Docker Compose to containerize the development environments and used prepared SQL statements, automated testing, middleware, and structured error responses to improve reliability and security.",
-    ],
-
-    technologies: [
-      "PHP 8.2",
-      "Node.js",
-      "JavaScript",
-      "PostgreSQL",
-      "Docker",
-      "Docker Compose",
-      "JWT",
-      "PHPUnit",
-      "Composer",
-      "PSR-4",
-      "REST API",
-      "RBAC",
-      "Express Middleware",
-      "React",
-    ],
-
-    highlights: [
-      "5 RESTful CRUD endpoints",
-      "Test-driven development with PHPUnit",
-      "JWT authentication",
-      "Role-based access control",
-      "Dockerized services",
-      "PostgreSQL database",
-      "Request logging & trace IDs",
-      "API rate limiting",
-      "Centralized error handling",
-    ],
-  },
-
-  {
-    slug: "interactive-recipe-book-v2",
-    title: "Interactive Recipe Book V2",
-    category: "Full-Stack Web Application",
-
-    repository:
-      "https://gitlab.com/HPPrajapati2906/interactive-recipe-book-v2",
-
-    image: "/projects/interactive-recipe-book-v2.jpg",
-    accent: "from-cyan-500 to-blue-500",
-
-    summary: "A full-stack recipe management application built with React, Node.js, MongoDB, and REST APIs. Features secure authentication, role-based access control, recipe management, live search, filtering, sorting, pagination, image uploads, and form validation. Deployed with Vercel serverless functions, MongoDB, and Cloudinary.",
-
-    description: [
-      "Developed a full-stack React application with Node.js serverless APIs and MongoDB, providing dynamic recipe management and data-driven functionality.",
-
-      "Implemented secure authentication using JWT, bcrypt, and Google Sign-In, with role-based access control for protected application features.",
-
-      "Built reusable React components and interactive functionality including live search, category filtering, sorting, pagination, and form validation.",
-
-      "Integrated Cloudinary for recipe image management and connected the application to MongoDB for persistent recipe data.",
-
-      "Implemented API communication between the React frontend and backend services, handling authentication, data retrieval, and recipe operations.",
-
-      "Troubleshot and resolved API, authentication, CORS, environment-variable, and deployment issues through systematic debugging and testing.",
-
-      "Deployed the application using Vercel serverless functions and MongoDB, applying software development practices from development through deployment.",
-    ],
-
-    technologies: [
-      "React 19",
-      "JavaScript",
-      "Node.js",
-      "MongoDB",
-      "REST APIs",
-      "JWT",
-      "bcrypt",
-      "Google OAuth",
-      "Cloudinary",
-      "Bootstrap",
-      "React Router",
-      "Vite",
-      "Vercel",
-    ],
-
-    highlights: [
-      "Full-stack React application",
-      "JWT authentication",
-      "MongoDB database",
-      "Cloudinary image storage",
-      "Recipe CRUD operations",
-      "Favorites & comments",
-      "Live search & filtering",
-      "Sorting & pagination",
-      "Form validation",
-      "Vercel deployment",
-    ],
-  },
-
+  // My Portfolio
   {
     slug: "my-portfolio",
     title: "My Portfolio",
     category: "Personal Project",
+    date: "Oct 2026 - Present",
 
     repository: "https://github.com/Praharnish/portfolio",
 
     image: "/projects/my-portfolio.jpg",
     accent: "from-amber-500 to-orange-500",
 
-    summary: "A responsive developer portfolio built with Next.js, React, TypeScript, and Tailwind CSS. Features a modern design, dynamic project pages, and a clean visual style.",
+    summary: "A responsive developer portfolio that showcases my background, technical skills, career goals, and software projects through a modern Next.js experience.",
 
     description: [
-      "Designed and developed a responsive developer portfolio using Next.js, React, TypeScript, and Tailwind CSS.",
+      "Designed and developed a responsive portfolio with Next.js, React, TypeScript, and Tailwind CSS to present my software development journey.",
 
-      "Created reusable project, skills, career, and contact sections to present my development experience and career progression.",
+      "Created focused sections for my introduction, experience, skills, career goals, featured projects, and contact information.",
 
-      "Implemented dynamic project pages using route-based project data.",
+      "Implemented reusable project cards and dynamic project detail pages powered by centralized route-based project data.",
 
-      "Focused on responsive design, accessible navigation, reusable components, and a modern developer-focused visual style.",
+      "Focused on responsive layouts, accessible navigation, reusable components, clear content structure, and a polished developer-focused visual style.",
     ],
 
     technologies: [
@@ -153,64 +49,204 @@ export const projects: Project[] = [
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "JavaScript",
+    ],
+    
+    highlights: [
+      "Responsive portfolio website",
+      "App Router project pages",
+      "Centralized project data",
+      "Responsive UI",
+      "Reusable components",
+      "Accessible navigation",
+    ],
+
+    careerConnection: {
+      title: "Modern frontend development",
+      description: "This project demonstrates my ability to build and structure a modern frontend application with a focus on maintainability, reusable components, responsive design, and clear user experience. I designed the portfolio around centralized project data and dynamic routing so new projects can be added without duplicating page layouts, while applying Next.js, React, TypeScript, and Tailwind CSS to create a consistent and scalable interface.",
+    },
+  },
+  
+  // Interactive Recipe Book V2
+  {
+    slug: "interactive-recipe-book-v2",
+    title: "Interactive Recipe Book V2",
+    category: "Full-Stack Web Application",
+    date: "Jun 2026 - Present",
+
+    repository:
+      "https://gitlab.com/HPPrajapati2906/interactive-recipe-book-v2",
+
+    image: "/projects/interactive-recipe-book-v2.jpg",
+    accent: "from-cyan-500 to-blue-500",
+
+    summary: "A full-stack web platform for discovering, saving, sharing, and discussing recipes.",
+
+    description: [
+      "Interactive Recipe Book helps users find and organize recipes through a simple, community-focused experience.",
+      
+      "Users can browse, search, filter, and sort recipes, view detailed cooking instructions, save favorites, publish recipes, and participate in discussions.",
+      
+      "The platform includes secure authentication, Google sign-in, protected user features, MongoDB APIs, and Cloudinary image uploads. The Android app is currently under development.",
+    ],
+
+    technologies: [
+    "React",
+    "Vite",
+    "React Router",
+    "Bootstrap",
+    "Node.js",
+    "MongoDB",
+    "JWT",
+    "Google OAuth",
+    "Cloudinary",
     ],
 
     highlights: [
-      "Next.js application",
-      "TypeScript",
-      "Responsive UI",
-      "Dynamic project pages",
-      "Reusable components",
+      "Search, filter, sort, and paginate recipes",
+      "View ingredients and cooking instructions",
+      "Create and publish personal recipes",
+      "Save favorite recipes",
+      "Upload recipe images",
+      "Email and Google authentication",
+      "Protected user features",
+      "Community comments",
+      "Responsive web design",
+      "Android app under development",
     ],
+
+    careerConnection: {
+      title: "Full-stack application development",
+      description: "This project demonstrates my ability to develop user-facing functionality across the frontend, backend, database, authentication, and deployment layers of an application. I implemented features such as recipe management, search and filtering, favorites, comments, protected user functionality, multiple authentication methods, image uploads, and persistent data storage, giving me practical experience connecting independent application services into a complete product.",
+    },
   },
 
+  // Enterprise Web API
+  {
+    slug: "enterprise-web-api-suite",
+    title: "Enterprise Web API Suite",
+    category: "Backend Development",
+    date: "Jan 2026 - Apr 2026",
+
+    repository:
+      "https://github.com/Praharnish/inft2201-webdev-enterprise",
+
+    image: null,
+    accent: "from-violet-500 to-fuchsia-500",
+
+    summary: "A secure backend API project demonstrating RESTful services, JWT authentication, role-based access control, automated testing, and Docker-based development.",
+
+    description: [
+      "Developed a PHP REST API for managing mail records with complete create, read, update, and delete functionality.",
+
+      "Implemented PHPUnit tests, PostgreSQL database integration, prepared statements, JSON responses, and RESTful HTTP status codes.",
+
+      "Built a multi-service authentication system using Node.js, PHP, JWT, PostgreSQL, and Docker.",
+
+      "Added role-based access control to provide different permissions for administrators and regular users.",
+
+      "Developed a secure Node.js API with JWT verification, authorization policies, request logging, UUID trace IDs, rate limiting, and centralized error handling.",
+    ],
+
+    technologies: [
+      "Node.js",
+      "JavaScript",
+      "PHP",
+      "PostgreSQL",
+      "Express",
+      "JWT",
+      "Docker",
+      "Docker Compose",
+      "PHPUnit",
+      "Composer",
+    ],
+
+    highlights: [
+      "RESTful mail API",
+      "Full CRUD operations",
+      "JWT authentication",
+      "Role-based access control",
+      "Admin and user permissions",
+      "PHPUnit testing",
+      "PostgreSQL integration",
+      "Prepared SQL statements",
+      "Request logging",
+      "UUID trace IDs",
+      "API rate limiting",
+      "Centralized error handling",
+      "Dockerized services",
+    ],
+
+    careerConnection: {
+      title: "Secure enterprise API development",
+      description: "This project demonstrates my ability to design backend services with an emphasis on security, reliability, testing, and controlled access to application data. I worked with RESTful API design, CRUD operations, JWT authentication, role-based authorization, prepared database queries, automated testing, request tracing, rate limiting, and centralized error handling while integrating PHP and Node.js services through a Docker-based development environment.",
+    },
+  },
+
+
+  // Super Mario Bros
   {
     slug: "super-mario-bros",
     title: "Super Mario Bros",
-    category: "Object-Oriented Programming",
+    category: "Game Development",
+    date: "Jan 2026 - Apr 2026",
 
     repository: null,
 
     image: "/projects/super-mario-bros.jpg",
     accent: "from-red-500 to-orange-500",
 
-    summary: "A 2D Super Mario Bros-inspired platformer developed in C# and Unity. Features object-oriented programming principles, reusable gameplay systems, player and enemy mechanics, power-ups, collectibles, level transitions, animations, audio management, scoring, lives, and a persistent JSON-based leaderboard.",
+    summary: "A 2D platformer remake built in Unity that recreates the classic Super Mario Bros. experience while demonstrating core object-oriented programming principles.",
 
     description: [
-      "Developed a 2D Super Mario Bros-inspired platformer in C# and Unity as a three-person team project, applying object-oriented programming principles to create reusable and maintainable gameplay systems.",
-
-      "Designed an extensible class hierarchy using abstraction, inheritance, polymorphism, and encapsulation for players, enemies, and collectibles.",
-
-      "Implemented player movement, jumping, physics, power-ups, enemy interactions, warp pipes, level transitions, animations, audio management, scoring, lives, and game-state management.",
-
-      "Built a persistent JSON-based leaderboard system that stores player scores and coins across sessions, with dynamically generated UI entries for leaderboard rankings.",
-
-      "Used Unity's New Input System, coroutines, collision detection, custom physics utilities, and scene management to create responsive gameplay and smooth level transitions.",
+      "Developed a 2D Super Mario Bros. remake as a collaborative final project for an Object-Oriented Programming course at Durham College.",
+      
+      "Implemented side-scrolling gameplay with physics-based movement, jumping, enemy interactions, collectibles, power-ups, warp pipes, underground areas, and level-completion sequences.",
+      
+      "Applied abstraction, encapsulation, inheritance, and polymorphism to create reusable and maintainable gameplay systems.",
+      
+      "Designed a shared player hierarchy supporting different character forms, including Mario and Super Mario, with separate movement, animation, collision, and power-up behavior.",
+      
+      "Created specialized enemy classes for Goombas and Koopa Troopas, including movement, collision responses, shell mechanics, and defeat states.",
+      
+      "Implemented collectible systems for coins, mushrooms, and Starman power-ups that affect the player, score, abilities, and game progression.",
+      
+      "Built interactive level elements including mystery blocks, breakable bricks, solid blocks, warp pipes, flagpoles, and castles.",
+      
+      "Developed centralized systems for managing the score, coins, lives, player state, level progression, game-over conditions, and level restarts.",
+      
+      "Added animated characters, enemy animations, scene transitions, background music, sound effects, menus, game-over screens, and leaderboard functionality.",
+      
+      "Used Unity's Input System, 2D physics, tilemaps, animation controllers, Unity UI, and scene management tools to create a complete playable application."
     ],
 
     technologies: [
-      "C#",
       "Unity",
-      "Unity 2D",
-      "Object-Oriented Programming",
-      "New Input System",
-      "JSON",
-      "Git",
-      "GitHub",
+      "C#",
+      "2D Physics",
+      "Universal Render Pipeline",
+      "Tilemaps",
+      "Unity Input System",
+      "Animation Controllers"
     ],
 
     highlights: [
-      "2D platformer gameplay",
-      "Object-oriented class hierarchy",
-      "Abstraction, inheritance & polymorphism",
-      "Player and enemy systems",
-      "Power-ups and collectibles",
-      "Physics and collision detection",
-      "Level transitions",
-      "Persistent JSON leaderboard",
-      "Dynamic UI generation",
-      "Team-based development",
+      "Physics-based player movement",
+      "Mario and Super Mario states",
+      "Reusable OOP class hierarchy",
+      "Goomba and Koopa behaviors",
+      "Coins and power-ups",
+      "Interactive mystery blocks",
+      "Warp pipes and underground levels",
+      "Flagpole level completion",
+      "Score and life management",
+      "Leaderboard system",
+      "Animated characters and enemies",
+      "Scene transitions and audio"
     ],
+
+    careerConnection: {
+      title: "Object-oriented game development",
+      description: "This project demonstrates my ability to apply object-oriented design to a complex interactive application while working as part of a development team. I designed reusable class hierarchies and gameplay systems using abstraction, encapsulation, inheritance, and polymorphism, while coordinating player states, enemies, collectibles, physics, level progression, UI, audio, and persistent game data into a cohesive application.",
+    },
   },
 ];

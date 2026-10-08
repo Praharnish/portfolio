@@ -53,9 +53,15 @@ export default async function ProjectPage({
 
         {/* HEADER */}
         <header className="mt-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
-            {project.category}
-          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
+              {project.category}
+            </p>
+
+            <span className="rounded-full border border-violet-400/20 bg-violet-400/10 px-3 py-1 text-xs font-medium text-violet-300">
+              {project.date}
+            </span>
+          </div>
 
           <h1 className="mt-3 text-4xl font-black tracking-tight text-white md:text-6xl">
             {project.title}
@@ -179,15 +185,11 @@ export default async function ProjectPage({
           </p>
 
           <h2 className="mt-3 text-2xl font-bold text-white">
-            Practical software development experience
+            {project.careerConnection.title}
           </h2>
 
           <p className="mt-4 max-w-3xl leading-8 text-slate-300">
-            This project represents my hands-on experience applying software
-            development concepts to a working application. It allowed me to
-            work with APIs, databases, authentication, debugging, and
-            application architecture while developing my skills toward a
-            professional software development career.
+            {project.careerConnection.description}
           </p>
         </section>
 

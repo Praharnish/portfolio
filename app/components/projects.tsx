@@ -57,10 +57,23 @@ export default function Projects() {
                                 {project.title.charAt(0)}
                             </div>
 
-                            <h3 className="text-xl font-semibold text-white">
-                                {project.title}
-                            </h3>
+                            {/* TITLE + YEAR */}
+                            <div className="flex items-start justify-between gap-4">
+                                <h3 className="text-xl font-semibold text-white">
+                                    {project.title}
+                                </h3>
 
+                                <span className="shrink-0 rounded-full border border-violet-400/20 bg-violet-400/10 px-3 py-1 text-xs font-medium text-violet-300">
+                                    {project.date}
+                                </span>
+                            </div>
+
+                            {/* CATEGORY */}
+                            <p className="mt-2 text-sm font-medium text-slate-400">
+                                {project.category}
+                            </p>
+
+                            {/* SUMMARY */}
                             <p className="mt-3 text-base leading-7 text-slate-300">
                                 {project.summary}
                             </p>
