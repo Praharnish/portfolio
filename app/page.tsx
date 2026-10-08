@@ -2,63 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import profileImage from "../public/profile.jpg";
 
-const stats = [
-  { label: "Semester", value: "5th" },
-  { label: "Projects", value: "10+" },
-  { label: "Programming", value: "C# • Java • Python" },
-];
-
-const skills = [
-  "C#",
-  "Java",
-  "Python",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "SQL",
-  "REST APIs",
-  "MongoDB",
-  "Docker",
-  "Unity",
-  "Git & GitHub",
-];
-
-const projects = [
-  {
-    slug: "enterprise-web-api",
-    title: "Enterprise Web API",
-    description:
-      "A full-stack application featuring authentication, role-based access control, REST APIs, and database integration.",
-    accent: "from-violet-500 to-fuchsia-500",
-    image: null,
-  },
-  {
-    slug: "interactive-recipe-book-v2",
-    title: "Interactive Recipe Book V2",
-    description:
-      "A full-stack recipe management application built with React, Node.js, MongoDB, and REST APIs. Features secure authentication, role-based access control, recipe management, live search, filtering, sorting, pagination, image uploads, and form validation. Deployed with Vercel serverless functions, MongoDB, and Cloudinary.",
-    accent: "from-cyan-500 to-blue-500",
-    image: "/projects/interactive-recipe-book-v2.jpg",
-  },
-  {
-    slug: "my-portfolio",
-    title: "My Portfolio",
-    description:
-      "A modern personal portfolio built with Next.js and Tailwind CSS to showcase my projects, skills, and development journey.",
-    accent: "from-amber-500 to-orange-500",
-    image: null,
-  },
-  {
-    slug: "super-mario-bros",
-    title: "Super Mario Bros",
-    description:
-      "A 2D platformer developed in C# and Unity featuring object-oriented gameplay systems, player movement, enemies, power-ups, level transitions, scoring, and persistent leaderboards.",
-    accent: "from-red-500 to-orange-500",
-    image: "/projects/super-mario-bros.jpg",
-  },
-];
+import { portfolio } from "../data/portfolio";
+import { projects } from "../data/projects";
+import { skills } from "../data/skills";
+import { career } from "../data/career";
 
 export default function Home() {
   return (
@@ -91,29 +38,23 @@ export default function Home() {
         </header>
 
         {/* HERO */}
-        <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top,_rgba(139,92,246,0.22),transparent_30%),linear-gradient(135deg,#0b1120_0%,#111827_40%,#070b16_100%)] px-6 py-10 shadow-[0_30px_80px_rgba(15,23,42,0.85)] md:px-10 md:py-14">
+        <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b1020] px-6 py-10 shadow-[0_30px_80px_rgba(15,23,42,0.85)] md:px-10 md:py-14">
 
-          <div className="absolute -right-20 top-10 h-64 w-64 rounded-full bg-violet-500/20 blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-52 w-52 rounded-full bg-cyan-500/10 blur-3xl" />
 
           <div className="relative grid items-center gap-10 md:grid-cols-[1.2fr_0.8fr]">
 
             {/* HERO CONTENT */}
             <div>
               <p className="mb-4 inline-flex rounded-full border border-violet-400/30 bg-violet-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-violet-200">
-                Computer Programming & Analysis • Software Developer
+                {portfolio.hero.label}
               </p>
 
               <h1 className="max-w-3xl text-4xl font-black tracking-[-0.06em] text-white md:text-6xl">
-                Building software, exploring technology, and turning ideas into real applications.
+                {portfolio.hero.title}
               </h1>
 
               <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-                I’m Harnish Prajapati, a Computer Programming & Analysis student
-                focused on software development, full-stack applications, and
-                modern web technologies. I enjoy building practical projects
-                while continuously expanding my skills across different areas
-                of software engineering.
+                {portfolio.hero.description}
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
@@ -134,7 +75,7 @@ export default function Home() {
 
               {/* STATS */}
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                {stats.map((stat) => (
+                {portfolio.stats.map((stat) => (
                   <div
                     key={stat.label}
                     className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm"
@@ -153,7 +94,7 @@ export default function Home() {
 
             {/* PROFILE IMAGE */}
             <div className="flex justify-center">
-              <div className="relative h-[340px] w-[280px] rounded-[2rem] border border-white/10 bg-gradient-to-br from-violet-500/20 via-slate-900 to-cyan-500/20 p-4 shadow-[0_0_50px_rgba(139,92,246,0.2)]">
+              <div className="relative h-[340px] w-[280px] rounded-[2rem] border border-white/10 bg-[#111827] p-4 shadow-[0_0_50px_rgba(15,23,42,0.5)]">
 
                 <div className="absolute inset-x-8 top-6 h-16 rounded-full bg-violet-500/30 blur-2xl" />
 
@@ -182,94 +123,54 @@ export default function Home() {
         >
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
-              About Me
+              {portfolio.about.label}
             </p>
 
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">
-              Learning by building real software.
+              {portfolio.about.title}
             </h2>
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-lg leading-8 text-slate-300 backdrop-blur-sm">
-            I’m currently studying Computer Programming & Analysis at Durham
-            College, where I’ve developed experience across object-oriented
-            programming, web development, databases, software testing, APIs,
-            and application development.
-
-            <br />
-            <br />
-
-            My development journey is strongly project-driven. From full-stack
-            web applications and Android projects to Unity game development
-            and database-driven applications, I use projects to turn what I
-            learn in class into practical software.
+            {portfolio.about.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="mb-6 last:mb-0">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </section>
 
         {/* CAREER DEVELOPMENT */}
         <section id="career" className="scroll-mt-24 mt-16">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
-            Career Development
+            {career.label}
           </p>
 
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">
-            Growing toward software engineering.
+            {career.title}
           </h2>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {career.items.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
+              >
+                <div
+                  className={`mb-5 flex h-12 w-12 items-center justify-center rounded-2xl ${item.iconStyle} text-xl`}
+                >
+                  {item.icon}
+                </div>
 
-            {/* EDUCATION */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-500/15 text-xl">
-                🎓
+                <h3 className="text-xl font-semibold text-white">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-slate-300">
+                  {item.description}
+                </p>
               </div>
-
-              <h3 className="text-xl font-semibold text-white">
-                Computer Programming
-              </h3>
-
-              <p className="mt-3 text-sm leading-7 text-slate-300">
-                Computer Programming & Analysis student at Durham College,
-                currently in my fifth semester and preparing for my required
-                field placement.
-              </p>
-            </div>
-
-            {/* AMAZON */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/15 text-xl">
-                📦
-              </div>
-
-              <h3 className="text-xl font-semibold text-white">
-                Amazon Experience
-              </h3>
-
-              <p className="mt-3 text-sm leading-7 text-slate-300">
-                Professional experience at Amazon has strengthened my
-                understanding of operations, problem solving, accuracy,
-                teamwork, safety, and working effectively in a fast-paced
-                environment.
-              </p>
-            </div>
-
-            {/* SOFTWARE CAREER */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/15 text-xl">
-                💻
-              </div>
-
-              <h3 className="text-xl font-semibold text-white">
-                Software Engineering
-              </h3>
-
-              <p className="mt-3 text-sm leading-7 text-slate-300">
-                Currently developing my portfolio and technical skills toward
-                software developer and software engineering co-op
-                opportunities.
-              </p>
-            </div>
-
+            ))}
           </div>
         </section>
 
@@ -355,7 +256,7 @@ export default function Home() {
                   </h3>
 
                   <p className="mt-3 text-base leading-7 text-slate-300">
-                    {project.description}
+                    {project.summary}
                   </p>
 
                   <div className="mt-5 text-sm font-medium text-violet-300">
@@ -372,53 +273,36 @@ export default function Home() {
         <section className="scroll-mt-24 mt-16 rounded-[2rem] border border-white/10 bg-white/5 px-6 py-10 md:px-10">
 
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
-            What I’m Working Toward
+            {portfolio.goals.label}
           </p>
 
           <div className="mt-5 grid gap-8 md:grid-cols-2">
 
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-white">
-                From classroom projects to professional software development.
+                {portfolio.goals.title}
               </h2>
 
               <p className="mt-4 leading-7 text-slate-300">
-                My current goal is to gain professional software development
-                experience through a co-op or internship while continuing to
-                strengthen my skills in full-stack development, backend
-                systems, cloud technologies, and software engineering.
+                {portfolio.goals.description}
               </p>
             </div>
 
             <div className="grid gap-3 text-sm text-slate-300">
+              {portfolio.goals.areas.map((area) => (
+                <div
+                  key={area.title}
+                  className="rounded-2xl border border-white/10 bg-black/10 p-4"
+                >
+                  <span className="font-semibold text-white">
+                    {area.title}
+                  </span>
 
-              <div className="rounded-2xl border border-white/10 bg-black/10 p-4">
-                <span className="font-semibold text-white">
-                  Full-Stack Development
-                </span>
-                <p className="mt-1">
-                  React, Next.js, Node.js, APIs and databases
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-black/10 p-4">
-                <span className="font-semibold text-white">
-                  Application Development
-                </span>
-                <p className="mt-1">
-                  Java, C#, Android development and Unity
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-black/10 p-4">
-                <span className="font-semibold text-white">
-                  Backend & Data
-                </span>
-                <p className="mt-1">
-                  REST APIs, SQL, MongoDB, authentication and Docker
-                </p>
-              </div>
-
+                  <p className="mt-1">
+                    {area.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -429,29 +313,27 @@ export default function Home() {
           className="scroll-mt-24 mt-16 rounded-[2rem] border border-violet-400/20 bg-gradient-to-r from-violet-500/10 via-slate-900 to-cyan-500/10 px-6 py-10 md:px-10"
         >
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-200">
-            Contact
+            {portfolio.contact.label}
           </p>
 
           <div className="mt-4 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
 
             <div>
               <h2 className="max-w-xl text-3xl font-bold tracking-tight text-white md:text-4xl">
-                Let’s connect and build something meaningful.
+                {portfolio.contact.title}
               </h2>
 
               <p className="mt-3 max-w-xl text-slate-300">
-                I’m interested in connecting with developers, recruiters,
-                mentors, and teams working on interesting software projects.
+                {portfolio.contact.description}
               </p>
             </div>
 
             <a
-              href="mailto:harnishprajapati2906@gmail.com"
+              href={`mailto:${portfolio.contact.email}`}
               className="inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-slate-900 transition hover:bg-slate-200"
             >
               Get in touch
             </a>
-
           </div>
         </section>
 
