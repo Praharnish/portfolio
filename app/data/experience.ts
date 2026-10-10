@@ -1,4 +1,15 @@
-export const experience = [
+export type ExperienceItem = {
+  company: string;
+  role: string;
+  location: string;
+  period: string;
+  type: string;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+};
+
+export const experience: ExperienceItem[] = [
   {
     company: "Amazon",
     role: "Fulfillment Center Associate",

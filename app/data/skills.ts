@@ -1,4 +1,6 @@
-export const skills = [
+export type Skill = string;
+
+export const skills: Skill[] = [
   "C#",
   "Java",
   "Python",

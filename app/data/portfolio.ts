@@ -1,3 +1,37 @@
+export type HeroItem = {
+  label: string;
+  title: string;
+  description: string;
+};
+
+export type StatItem = {
+  label: string;
+  value: string;
+};
+
+export type AboutItem = {
+  label: string;
+  title: string;
+  paragraphs: string[];
+};
+
+export type GoalsItem = {
+  label: string;
+  title: string;
+  description: string;
+  areas: {
+    title: string;
+    description: string;
+  }[];
+};
+
+export type ContactItem = {
+  label: string;
+  title: string;
+  description: string;
+  email: string;
+};
+
 export const portfolio = {
   name: "Harnish Prajapati",
 
@@ -9,7 +43,7 @@ export const portfolio = {
 
     description:
       "I’m Harnish Prajapati, a Computer Programming & Analysis student focused on software development, full-stack applications, and modern web technologies. I enjoy building practical projects while continuously expanding my skills across different areas of software engineering.",
-  },
+  } satisfies HeroItem,
 
   stats: [
     {
@@ -24,7 +58,7 @@ export const portfolio = {
       label: "Programming",
       value: "C# • Java • Python",
     },
-  ],
+  ] satisfies StatItem[],
 
   about: {
     label: "About Me",
@@ -36,7 +70,7 @@ export const portfolio = {
 
       "My development journey is strongly project-driven. From full-stack web applications and Android projects to Unity game development and database-driven applications, I use projects to turn what I learn in class into practical software.",
     ],
-  },
+  } satisfies AboutItem,
 
   goals: {
     label: "What I’m Working Toward",
@@ -64,7 +98,7 @@ export const portfolio = {
           "REST APIs, SQL, MongoDB, authentication and Docker",
       },
     ],
-  },
+  } satisfies GoalsItem,
 
   contact: {
     label: "Contact",
@@ -75,5 +109,5 @@ export const portfolio = {
       "I’m interested in connecting with developers, recruiters, mentors, and teams working on interesting software projects.",
 
     email: "harnishprajapati2906@gmail.com",
-  },
+  } satisfies ContactItem,
 };
