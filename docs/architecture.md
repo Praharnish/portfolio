@@ -2,19 +2,20 @@
 
 ## Project type
 
-This is a personal portfolio built with the Next.js App Router. It is currently a small, content-driven application with no database, API layer, authentication, or client-side state management.
+This repository is a personal portfolio built with the Next.js App Router. The site is intentionally lightweight and content-focused, with no database, authentication, or backend data layer.
 
-## Technology
+## Current technical stack
 
 - Next.js `16.3.6`
 - React `19.2.8`
 - TypeScript
-- Tailwind CSS `4` through `@tailwindcss/postcss`
-- ESLint 9 with Next.js rules
+- Tailwind CSS `4`
+- ESLint 9
 
 ## Repository structure
 
 ```text
+portfolio/
 ├── app/
 │   ├── globals.css
 │   ├── layout.tsx
@@ -22,35 +23,77 @@ This is a personal portfolio built with the Next.js App Router. It is currently 
 │   └── projects/
 │       └── [slug]/
 │           └── page.tsx
+├── components/
+│   ├── about.tsx
+│   ├── career.tsx
+│   ├── contact.tsx
+│   ├── experience.tsx
+│   ├── goals.tsx
+│   ├── hero.tsx
+│   ├── navbar.tsx
+│   ├── projects.tsx
+│   └── skills.tsx
+├── data/
+│   ├── career.ts
+│   ├── experience.ts
+│   ├── portfolio.ts
+│   ├── projects.ts
+│   └── skills.ts
+├── types/
+│   ├── career.ts
+│   ├── experience.ts
+│   ├── portfolio.ts
+│   ├── projects.ts
+│   └── skills.ts
 ├── public/
 │   └── profile.jpg
-├── Doc/
+├── docs/
+├── README.md
 ├── package.json
 ├── next.config.ts
-├── postcss.config.mjs
+├── tsconfig.json
 ├── eslint.config.mjs
-└── tsconfig.json
+├── next-env.d.ts
+└── package-lock.json
 ```
 
 ## App architecture
 
-- `app/layout.tsx` defines the root HTML structure, Geist font variables, language, and global metadata.
-- `app/page.tsx` renders the homepage and owns the current profile, skills, and featured-project arrays.
-- `app/projects/[slug]/page.tsx` resolves a slug against an in-file project object and renders the project overview, highlights, technologies, and repository link.
-- `app/globals.css` imports Tailwind, defines the base colors, and applies global background, typography, scrolling, and selection styles.
-- `public/` contains static assets, including the profile image and default Next.js assets.
+- `app/layout.tsx` loads the Geist fonts, global metadata, and base HTML structure.
+- `app/page.tsx` assembles the homepage by composing the portfolio sections.
+- `app/projects/[slug]/page.tsx` resolves a slug against the project data and renders a project detail page.
+- `components/` contains the reusable homepage sections and the navigation structure.
+- `data/` stores content used in the application, including portfolio data and project records.
+- `types/` defines the TypeScript models used to structure the content.
+- `public/` stores static assets, including the profile image.
 
-## Routes and rendering
+## Routing and rendering
 
-- `/` is a static homepage.
-- `/projects/[slug]` is a dynamic server-rendered route. The project records are stored in the page module rather than fetched from an external service.
-- An unknown project slug renders an in-page `Project Not Found` state and a link back to the project section.
-- `next.config.ts` currently uses the default Next.js configuration.
+- `/` renders the main portfolio homepage.
+- `/projects/[slug]` renders a detail page for each encoded project.
+- Unknown slugs fall back to a user-friendly `Project Not Found` state and a return link.
+- Rendering is static and server-driven with no API layer or client-side database dependency.
+
+## Data architecture
+
+The portfolio uses a centralized content model that keeps copy and project records organized:
+
+- `data/portfolio.ts` contains the profile, hero text, stats, and contact details.
+- `data/projects.ts` stores the featured project list, descriptions, repositories, highlights, and technologies.
+- `components/` render the content rather than owning the copy directly.
+- `types/` enforce structure across the portfolio and project models.
+
+This keeps updates simple and reduces risk of layout drift when content changes.
 
 ## Styling approach
 
-Tailwind utility classes handle nearly all component layout and styling. Global CSS supplies the dark page background, smooth scrolling, selection colors, and Tailwind theme variables. The visual language uses dark surfaces, white text, violet/cyan accents, gradients, borders, and rounded panels.
+Tailwind utility classes drive the UI while a small global stylesheet handles the dark base theme, smooth scrolling, and root styling. The visual language uses a deep navy palette, violet and cyan accents, layered surfaces, soft glows, and strong typographic hierarchy.
 
 ## Extension points
 
-For a larger portfolio, move repeated content into `data/` and repeated visual blocks into `components/`. Add a content source or CMS only when the number of projects or editing workflow justifies the extra runtime and maintenance cost. A contact form, analytics, or resume download would also require an explicit implementation and privacy review; none is currently present.
+The project is already structured for easy expansion:
+
+- Add new project entries in `data/projects.ts` to create another portfolio case study.
+- Extend `data/portfolio.ts` for new profile details or content updates.
+- Reuse components when additional sections are needed.
+- Add a real CMS or backend only when the portfolio needs dynamic content or remote data management.

@@ -1,6 +1,6 @@
 # Harnish Prajapati | Portfolio
 
-A Next.js portfolio for Harnish Prajapati. The site presents his background, technical skills, selected projects, career direction, and a direct email contact path.
+A responsive developer portfolio built with Next.js to present Harnish Prajapati's background, software skills, project work, and career direction.
 
 ## Live site
 
@@ -8,27 +8,31 @@ Production deployment:
 
 <https://portfolio-praharnishs-projects.vercel.app/>
 
-## What is included
+## Current stage
+
+This project is in its active portfolio-MVP stage: the homepage, reusable sections, and dynamic project detail pages are complete, and the content is organized through centralized data modules instead of being embedded in page components.
+
+## Included features
 
 - Responsive single-page portfolio homepage
-- About, career, skills, projects, and contact sections
-- Three project detail pages backed by route-based in-file data
-- Repository links for the featured projects
-- Local profile image at `public/profile.jpg`
-- Dark visual system built with Tailwind CSS utilities and global CSS
+- About, career, experience, skills, projects, goals, and contact sections
+- Four featured project case studies with dedicated dynamic routes
+- Reusable components and typed content data for maintainability
+- Dark, developer-focused visual design with Tailwind utilities
+- Direct email contact and external repository links
 
-## Technology
+## Stack
 
-- Next.js `16.3.6` with the App Router
+- Next.js `16.3.6` with App Router
 - React `19.2.8`
 - TypeScript
 - Tailwind CSS `4`
-- ESLint 9 with the Next.js Core Web Vitals and TypeScript configurations
+- ESLint 9
 
 ## Requirements
 
-- Node.js and npm compatible with the versions used by Next.js 16
-- A local clone of this repository
+- Node.js and npm compatible with the current Next.js 16 toolchain
+- Git clone of this repository
 
 ## Getting started
 
@@ -44,26 +48,27 @@ Start the development server:
 npm run dev
 ```
 
-Open <http://localhost:3000> in a browser.
+Open <http://localhost:3000> in the browser.
 
 ## Scripts
 
 | Command | Purpose |
 | --- | --- |
-| `npm run dev` | Start the development server |
-| `npm run build` | Create an optimized production build |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Create a production build |
 | `npm run start` | Serve the production build locally |
 | `npm run lint` | Run ESLint across the project |
 
-## Routes
+## Route overview
 
 | Route | Behavior |
 | --- | --- |
-| `/` | Portfolio homepage |
-| `/projects/enterprise-web-api` | Enterprise Web API case-study page |
-| `/projects/interactive-recipe-book` | Interactive Recipe Book case-study page |
-| `/projects/portfolio-system` | Portfolio case-study page |
-| `/projects/[slug]` | Dynamic project route; unknown slugs render a not-found message |
+| `/` | Portfolio homepage with all main sections |
+| `/projects/my-portfolio` | Portfolio project case study |
+| `/projects/interactive-recipe-book-v2` | Recipe book project case study |
+| `/projects/enterprise-web-api-suite` | API suite project case study |
+| `/projects/super-mario-bros` | Game project case study |
+| `/projects/[slug]` | Dynamic project route with fallback not-found state |
 
 ## Project structure
 
@@ -76,40 +81,70 @@ portfolio/
 │   └── projects/
 │       └── [slug]/
 │           └── page.tsx
+├── components/
+│   ├── about.tsx
+│   ├── career.tsx
+│   ├── contact.tsx
+│   ├── experience.tsx
+│   ├── goals.tsx
+│   ├── hero.tsx
+│   ├── navbar.tsx
+│   ├── projects.tsx
+│   └── skills.tsx
+├── data/
+│   ├── portfolio.ts
+│   ├── projects.ts
+│   ├── career.ts
+│   ├── experience.ts
+│   └── skills.ts
+├── types/
+│   ├── portfolio.ts
+│   ├── projects.ts
+│   ├── career.ts
+│   ├── experience.ts
+│   └── skills.ts
 ├── public/
 │   └── profile.jpg
-├── Doc/
+├── docs/
+│   ├── architecture.md
+│   ├── design.md
+│   ├── memory.md
+│   ├── prd.md
+│   ├── rules.md
+│   └── tasks.md
 ├── README.md
 ├── package.json
-├── tsconfig.json
+├── package-lock.json
 ├── next.config.ts
-└── eslint.config.mjs
+├── tsconfig.json
+├── eslint.config.mjs
+└── next-env.d.ts
 ```
 
-## Updating the portfolio
+## Content and maintenance
 
-- Edit homepage profile, skills, and project-card content in `app/page.tsx`.
-- Edit project descriptions, technologies, highlights, and repository URLs in `app/projects/[slug]/page.tsx`.
-- Replace the profile image at `public/profile.jpg` while keeping the filename, or update the import in `app/page.tsx`.
-- Update page metadata in `app/layout.tsx`.
-- Keep product and implementation decisions synchronized with the files in `Doc/`.
+- Update page-level structure in `app/page.tsx` and `app/projects/[slug]/page.tsx` only when the layout changes.
+- Maintain profile content, stats, and contact data in `data/portfolio.ts`.
+- Maintain project details in `data/projects.ts`.
+- Replace the profile photo at `public/profile.jpg` if needed.
+- Keep the implementation decisions and product requirements aligned with the files in `docs/`.
 
 ## Validation
 
-Run both checks before publishing:
+Run the project checks before publishing:
 
 ```bash
 npm run lint
 npm run build
 ```
 
-The production build and ESLint checks currently complete successfully.
+The current application state is a working, documentation-aligned portfolio with successful lint and production build checks.
 
 ## Documentation
 
-- [Product requirements](Doc/prd.md)
-- [Architecture](Doc/architecture.md)
-- [Design direction](Doc/design.md)
-- [Coding rules](Doc/rules.md)
-- [Tasks and progress](Doc/tasks.md)
-- [Project context](Doc/memory.md)
+- [Product requirements](docs/prd.md)
+- [Architecture](docs/architecture.md)
+- [Design direction](docs/design.md)
+- [Coding rules](docs/rules.md)
+- [Tasks and progress](docs/tasks.md)
+- [Project context](docs/memory.md)

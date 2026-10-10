@@ -24,8 +24,8 @@ export const portfolio = {
       value: "10+",
     },
     {
-      label: "Programming",
-      value: "C# • Java • Python",
+      label: "Current Occupation",
+      value: "Amazon",
     },
   ] satisfies StatItem[],
 

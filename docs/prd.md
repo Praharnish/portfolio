@@ -2,64 +2,82 @@
 
 ## Product overview
 
-This is Harnish Prajapati's personal developer portfolio. It communicates his education, software interests, technical skills, selected projects, career direction, and contact information in a maintainable web experience.
+This repository contains Harnish Prajapati's personal developer portfolio. The site communicates his software development background, current interests, project work, and career direction through a polished dark-themed web experience built with Next.js.
+
+## Product stage
+
+The project is currently in an active portfolio-MVP stage. The site is fully functional, content is centralized, and the project includes multiple case-study pages that showcase work across frontend, backend, full-stack, and game development.
 
 ## Audiences
 
-- Recruiters and hiring managers evaluating co-op or internship candidates
-- Developers, mentors, and collaborators
-- Visitors interested in Harnish's project work and technical growth
+- Recruiters and hiring managers evaluating internships, co-op roles, or junior developer opportunities
+- Developers, mentors, and collaborators looking for technical fit
+- Visitors reviewing project examples and career direction
 
 ## Product goals
 
-- Establish a clear professional identity quickly.
-- Show evidence of practical experience across web, backend, data, mobile, and application development.
-- Make selected projects easy to compare and inspect.
-- Provide a direct, low-friction contact path.
-- Keep content updates simple for a single maintainer.
+- Establish a clear professional identity within the first screen.
+- Present practical software experience using real project examples.
+- Explain technical focus areas across frontend, backend, APIs, data, and software engineering.
+- Provide a concise but effective contact route for outreach.
+- Keep the site maintainable by a single owner without a CMS or backend.
 
 ## Current user flows
 
-1. A visitor opens `/` and reads the hero and summary stats.
-2. The visitor scans About, Career, Skills, and the featured project cards.
-3. The visitor opens a project detail route to read its overview, highlights, technologies, and repository link.
-4. The visitor uses the Contact section's email CTA to start a conversation.
-5. The visitor navigates the same content on desktop or mobile layouts.
+1. A visitor lands on `/` and reads the hero, summary stats, and introduction.
+2. They scan the About, Career, Experience, Skills, and Projects sections.
+3. They click into a project card to view a dedicated case-study page.
+4. They review the technologies, highlights, and project repository link.
+5. They use the Contact section to reach out through email.
 
 ## Current requirements
 
-- Homepage sections for hero, About, Career, Skills, Projects, career direction, Contact, and footer.
-- In-page navigation to the major homepage sections.
-- Three featured projects with dedicated dynamic routes.
-- Project detail content for descriptions, technologies, highlights, and source repositories.
-- Responsive layout and dark visual theme.
-- Accessible semantic headings, image alternative text, readable contrast, and native links.
-- Maintainable Next.js App Router implementation with no backend dependency.
+- Responsive homepage with hero, about, career, experience, skills, projects, goals, contact, and footer sections.
+- In-page navigation between major homepage sections.
+- Four featured projects with dedicated dynamic routes.
+- Project detail pages that present overview, highlights, technologies, and repository links.
+- Reusable component structure and centralized typed data in `data/` and `types/`.
+- Dark visual theme, keyboard-friendly navigation, semantic HTML, and accessible contrast.
+- Lightweight static portfolio without database, authentication, or backend services.
 
 ## Non-functional requirements
 
 - Use Next.js, React, TypeScript, and Tailwind CSS.
-- Keep the site fast and lightweight by avoiding unnecessary runtime services.
-- Keep portfolio content easy to locate and update.
-- Validate changes with `npm run build` and `npm run lint` before release.
+- Keep the site fast, clear, and easy to maintain.
+- Keep portfolio content easy to update for a single developer.
+- Validate with `npm run lint` and `npm run build` before release.
+
+## Current scope
+
+Included in the project today:
+
+- Developer-focused landing page with portfolio sections
+- Reusable data-driven portfolio content
+- Four project pages for portfolio, recipe book, API suite, and game development work
+- Direct email-based contact path
+- Clean project documentation and architecture references
 
 ## Out of scope today
 
-There is currently no blog, resume download, social-link section, theme toggle, contact form backend, analytics integration, CMS, or database.
+- Blog or article publishing system
+- Resume download flow
+- Social media profile hub
+- Theme switcher or personalization settings
+- Contact form backend or analytics platform
+- CMS, database, or authentication layer
 
 ## Future enhancements
 
-- Resolve all current ESLint errors and the image optimization warning.
-- Normalize the configured Geist font usage in the global body styles.
-- Add richer case-study media and measurable project outcomes.
-- Add a resume download and professional social links.
-- Add a form only when a privacy-conscious submission service or backend is selected.
-- Consider separating content data from page rendering as the portfolio grows.
+- Add richer project media and measurable outcomes
+- Include professional social profiles and a downloadable resume
+- Expand the case-study set as the portfolio grows
+- Improve metadata, Open Graph, and SEO details
+- Add a privacy-conscious contact solution only if it adds real value
 
 ## Success criteria
 
-- A new visitor can identify the owner and software focus from the hero.
-- Featured projects can be reached in one clear interaction and understood without reading source code.
-- Contact is reachable from the homepage without a form or account.
-- The layout remains readable and usable across mobile and desktop viewports.
-- Production builds complete without errors.
+- A new visitor can quickly understand who the portfolio belongs to and where the technical focus is.
+- The featured projects are easy to compare and access through the portfolio interface.
+- The site remains readable and usable across mobile and desktop layouts.
+- The portfolio remains maintainable without introducing unnecessary infrastructure.
+- Production builds complete successfully and the repo remains documentation-aligned.

@@ -2,44 +2,45 @@
 
 ## Design intent
 
-The portfolio should make Harnish Prajapati's technical direction legible within the first screen, then give visitors a quick path from background to skills, projects, career goals, and contact. The experience should feel professional and focused rather than like a generic marketing landing page.
+The portfolio is designed to make Harnish Prajapati's software direction easy to understand within the first screen. The experience feels professional, focused, and technically credible rather than overly promotional.
 
 ## Current visual system
 
-- Dark navy and near-black page surfaces
-- Violet and cyan accents with occasional amber and orange project accents
-- Large, high-contrast headings and uppercase section labels
-- Rounded panels with translucent borders and restrained shadows
-- Responsive grids that collapse for smaller screens
-- Gradients and soft glow effects used as visual depth, not as content
+- Dark navy and near-black surfaces
+- Violet, cyan, and subtle amber/orange accent treatments
+- High-contrast typography with strong section hierarchy
+- Rounded cards, translucent borders, and restrained shadowing
+- Responsive grids that adapt cleanly across mobile and desktop layouts
+- Gradient accents used as subtle depth rather than decorative noise
 
 ## Page composition
 
-The homepage is ordered as:
+The homepage is arranged in the following order:
 
-1. Navigation and identity
-2. Hero, introduction, profile image, and summary stats
+1. Navigation and brand identity
+2. Hero section with summary and profile image
 3. About section
-4. Career development cards
-5. Technical skills
+4. Career timeline or experience cards
+5. Skills and technical focus
 6. Featured project cards
-7. Current career direction
+7. Goals and career direction
 8. Contact CTA and footer
 
-Project pages use a focused reading layout: back navigation, category and title, overview, highlights, technologies, repository CTA, career connection, and bottom navigation.
+Project detail pages follow a focused content flow: back link, category, title, overview, key highlights, technology tags, repository CTA, and career connection statement.
 
 ## Typography
 
-The layout uses a bold display hierarchy, readable body copy, and uppercase labels for section markers. Geist is loaded by `app/layout.tsx` and exposed through Tailwind variables; `app/globals.css` currently sets the body fallback to Arial, so typography should be normalized if the intended Geist treatment is required.
+The design uses bold, readable headings with generous spacing and section labels that feel technical and modern. Geist fonts are loaded through `app/layout.tsx`, and the global design uses a clear dark-surface layout that supports strong contrast and readable body copy.
 
 ## Interaction and accessibility
 
-- Navigation links scroll to homepage sections.
-- Project cards and repository links have visible hover states and keyboard-accessible native link behavior.
-- The profile image has meaningful alternative text.
-- Maintain heading order, readable contrast, visible focus states, and touch-friendly controls as the UI evolves.
-- Keep external repository links explicit and opening in a new tab only where that behavior remains useful.
+- Navigation links scroll to major sections on the homepage.
+- Project cards and repository links include clear hover treatment and native link behavior.
+- The profile image includes meaningful alt text.
+- Layouts stay predictable across screen sizes.
+- Semantic headings and accessible contrast are maintained across the interface.
+- External links open in a new tab when needed without reducing link clarity.
 
 ## Brand personality
 
-Confident, practical, curious, modern, and career-focused. Copy should favor specific evidence of software work over broad claims.
+Confident, practical, curious, and career-focused. The writing emphasizes concrete technical capability, project evidence, and learning direction over broad marketing language.
