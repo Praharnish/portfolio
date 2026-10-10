@@ -1,22 +1,5 @@
-export type Project = {
-  slug: string;
-  title: string;
-  category: string;
-  date: string | null;
-  repository: string | null;
-  image: string | null;
-  accent: string;
-  summary: string;
-  description: string[];
-  technologies: string[];
-  highlights: string[];
+import { Project } from "@/types/projects";
 
-
-  careerConnection: {
-    title: string;
-    description: string;
-  };
-};
 
 export const projects: Project[] = [
 

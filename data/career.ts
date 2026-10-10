@@ -1,9 +1,5 @@
-export type CareerItem = {
-  icon: string;
-  title: string;
-  description: string;
-  iconStyle: string;
-};
+import { CareerItem } from "@/types/career";
+
 
 export const career = {
   label: "Career Development",

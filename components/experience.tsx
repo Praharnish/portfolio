@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { experience } from "../data/experience";
+import { experience } from "@/data/experience";
 
 export default function Experience() {
     const [activeExperience, setActiveExperience] = useState<number | null>(

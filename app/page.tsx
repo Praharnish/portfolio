@@ -1,14 +1,14 @@
 "use client";
 
-import Experience from "./components/experience";
-import  Navbar  from "./components/navbar";
-import About from "./components/about";
-import Career from "./components/career";
-import Hero from "./components/hero";
-import Skills from "./components/skills";
-import Projects from "./components/projects";
-import Goals from "./components/goals";
-import Contact from "./components/contact";
+import Experience from "@/components/experience";
+import  Navbar  from "@/components/navbar";
+import About from "@/components/about";
+import Career from "@/components/career";
+import Hero from "@/components/hero";
+import Skills from "@/components/skills";
+import Projects from "@/components/projects";
+import Goals from "@/components/goals";
+import Contact from "@/components/contact";
 
 export default function Home() {
   return (

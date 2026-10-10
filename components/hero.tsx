@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { portfolio } from "../data/portfolio";
-import profileImage from "../../public/profile.jpg";
+import { portfolio } from "@/data/portfolio";
+import profileImage from "@/public/profile.jpg";
 
 export default function Hero() {
     return (

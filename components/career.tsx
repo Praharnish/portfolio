@@ -1,4 +1,4 @@
-import { career } from "../data/career";
+import { career } from "@/data/career";
 
 export default function Career() {
     return (
