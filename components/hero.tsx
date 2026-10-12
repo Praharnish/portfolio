@@ -18,7 +18,7 @@ export default function Hero() {
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
                         <a
-                            href="#projects"
+                            href="projects"
                             className="rounded-full bg-violet-500 px-5 py-3 text-sm font-medium text-white transition hover:bg-violet-400"
                         >
                             Explore My Projects

@@ -2,7 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/data/projects";
 
-
+export function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
 
 export default async function ProjectPage({
   params,
@@ -48,7 +52,7 @@ export default async function ProjectPage({
           href="/#projects"
           className="text-sm text-violet-300 transition hover:text-violet-200"
         >
-          ← Back to Projects
+          ← Back to Home
         </Link>
 
         {/* HEADER */}
@@ -196,7 +200,7 @@ export default async function ProjectPage({
         {/* BOTTOM NAVIGATION */}
         <div className="mt-12 border-t border-white/10 pt-8">
           <Link
-            href="/#projects"
+            href="/projects"
             className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-slate-200 transition hover:border-violet-400/40 hover:bg-white/10"
           >
             ← View All Projects

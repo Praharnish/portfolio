@@ -1,5 +1,3 @@
-"use client";
-
 import Experience from "@/components/experience";
 import  Navbar  from "@/components/navbar";
 import About from "@/components/about";

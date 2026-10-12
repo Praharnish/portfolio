@@ -3,6 +3,7 @@ import Link from "next/link";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
+
     return(
         <section id="projects" className="scroll-mt-24 mt-16">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
@@ -20,7 +21,7 @@ export default function Projects() {
             </p>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
-                {projects.map((project) => (
+                {projects.slice(0, 3).map((project) => (
                     <Link
                         key={project.slug}
                         href={`/projects/${project.slug}`}
@@ -85,6 +86,14 @@ export default function Projects() {
                         </div>
                     </Link>
                 ))}
+            </div>
+            <div className="mt-8 flex justify-center">
+                <Link
+                    href="/projects"
+                    className="rounded-full border border-violet-400/30 bg-violet-400/10 px-6 py-3 text-sm font-semibold text-violet-300 transition hover:bg-violet-400/20"
+                >
+                    View All Projects →
+                </Link>
             </div>
         </section>
     );
