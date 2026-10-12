@@ -147,6 +147,40 @@ export default async function ProjectPage({
           </div>
         </section>
 
+        {/* PROJECT WEBSITE */}
+        {project.website && (
+          <section className="mt-14">
+            <h2 className="text-2xl font-bold text-white">
+              Live Project
+            </h2>
+
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-lg font-semibold text-white">
+                    Explore the live application
+                  </p>
+
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
+                    Visit the deployed project to explore its features
+                    and user experience.
+                  </p>
+                </div>
+
+                <a
+                  href={project.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-500/10 px-5 py-3 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300/50 hover:bg-cyan-500/20 hover:text-white"
+                >
+                  Visit Website
+                  <span className="ml-2">↗</span>
+                </a>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* PROJECT REPOSITORY */}
         {project.repository &&
           project.repository !== null && (

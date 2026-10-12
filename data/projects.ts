@@ -10,6 +10,7 @@ export const projects: Project[] = [
     category: "Personal Project",
     date: "Oct 2026 - Present",
 
+    website: "https://portfolio-praharnishs-projects.vercel.app",
     repository: "https://github.com/Praharnish/portfolio",
 
     image: "/projects/my-portfolio.jpg",
@@ -56,6 +57,7 @@ export const projects: Project[] = [
     category: "Full-Stack Web Application",
     date: "Jun 2026 - Present",
 
+    website: "https://interactive-recipe-book-v2.vercel.app",
     repository:
       "https://gitlab.com/HPPrajapati2906/interactive-recipe-book-v2",
 
@@ -110,6 +112,7 @@ export const projects: Project[] = [
     category: "Backend Development",
     date: "Jan 2026 - Apr 2026",
 
+    website: null,
     repository:
       "https://github.com/Praharnish/inft2201-webdev-enterprise",
 
@@ -173,6 +176,7 @@ export const projects: Project[] = [
     category: "Game Development",
     date: "Jan 2026 - Apr 2026",
 
+    website: null,
     repository: null,
 
     image: "/projects/super-mario-bros.jpg",
