@@ -26,7 +26,9 @@ The homepage is arranged in the following order:
 7. Goals and career direction
 8. Contact CTA and footer
 
-Project detail pages follow a focused content flow: back link, category, title, overview, key highlights, technology tags, repository CTA, and career connection statement.
+The all-projects page follows a browse-first flow: back link, page heading, project count, and full-width project cards with preview imagery or accent fallbacks.
+
+Project detail pages follow a focused content flow: back link, category, title, optional project image, overview, key highlights, technology tags, optional live-site CTA, optional repository CTA, and career connection statement.
 
 ## Typography
 
@@ -36,6 +38,7 @@ The design uses bold, readable headings with generous spacing and section labels
 
 - Navigation links scroll to major sections on the homepage.
 - Project cards and repository links include clear hover treatment and native link behavior.
+- The contact form provides labeled fields, inline status feedback, and a disabled state while a message is sending.
 - The profile image includes meaningful alt text.
 - Layouts stay predictable across screen sizes.
 - Semantic headings and accessible contrast are maintained across the interface.

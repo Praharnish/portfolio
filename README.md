@@ -16,10 +16,12 @@ This project is in its active portfolio-MVP stage: the homepage, reusable sectio
 
 - Responsive single-page portfolio homepage
 - About, career, experience, skills, projects, goals, and contact sections
+- Dedicated all-projects index at `/projects`
 - Four featured project case studies with dedicated dynamic routes
 - Reusable components and typed content data for maintainability
 - Dark, developer-focused visual design with Tailwind utilities
-- Direct email contact and external repository links
+- EmailJS-powered contact form and external repository links
+- Vercel Analytics integration
 
 ## Stack
 
@@ -28,11 +30,22 @@ This project is in its active portfolio-MVP stage: the homepage, reusable sectio
 - TypeScript
 - Tailwind CSS `4`
 - ESLint 9
+- EmailJS Browser
+- Vercel Analytics
 
 ## Requirements
 
 - Node.js and npm compatible with the current Next.js 16 toolchain
 - Git clone of this repository
+- EmailJS service, template, and public key for the contact form
+
+The contact form reads these client-safe environment variables at runtime:
+
+```text
+NEXT_PUBLIC_EMAILJS_SERVICE_ID
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+```
 
 ## Getting started
 
@@ -64,6 +77,7 @@ Open <http://localhost:3000> in the browser.
 | Route | Behavior |
 | --- | --- |
 | `/` | Portfolio homepage with all main sections |
+| `/projects` | Index of all project records |
 | `/projects/my-portfolio` | Portfolio project case study |
 | `/projects/interactive-recipe-book-v2` | Recipe book project case study |
 | `/projects/enterprise-web-api-suite` | API suite project case study |
@@ -79,6 +93,7 @@ portfolio/
 │   ├── layout.tsx
 │   ├── page.tsx
 │   └── projects/
+│       ├── page.tsx
 │       └── [slug]/
 │           └── page.tsx
 ├── components/
@@ -104,7 +119,11 @@ portfolio/
 │   ├── experience.ts
 │   └── skills.ts
 ├── public/
-│   └── profile.jpg
+│   ├── profile.jpg
+│   └── projects/
+│       ├── interactive-recipe-book-v2.jpg
+│       ├── my-portfolio.jpg
+│       └── super-mario-bros.jpg
 ├── docs/
 │   ├── architecture.md
 │   ├── design.md
@@ -126,6 +145,9 @@ portfolio/
 - Update page-level structure in `app/page.tsx` and `app/projects/[slug]/page.tsx` only when the layout changes.
 - Maintain profile content, stats, and contact data in `data/portfolio.ts`.
 - Maintain project details in `data/projects.ts`.
+- The homepage shows the first three project records; `/projects` lists every record.
+- Add a project image under `public/projects/` and reference it from `data/projects.ts` when a preview is available. Projects without an image use their configured accent fallback.
+- Configure the three `NEXT_PUBLIC_EMAILJS_*` variables before testing the contact form.
 - Replace the profile photo at `public/profile.jpg` if needed.
 - Keep the implementation decisions and product requirements aligned with the files in `docs/`.
 

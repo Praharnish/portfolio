@@ -34,8 +34,11 @@ The project is currently in an active portfolio-MVP stage. The site is fully fun
 
 - Responsive homepage with hero, about, career, experience, skills, projects, goals, contact, and footer sections.
 - In-page navigation between major homepage sections.
+- A project index at `/projects` containing all project records.
 - Four featured projects with dedicated dynamic routes.
 - Project detail pages that present overview, highlights, technologies, and repository links.
+- A contact form that submits through EmailJS when its public environment variables are configured.
+- Privacy-conscious traffic measurement through Vercel Analytics.
 - Reusable component structure and centralized typed data in `data/` and `types/`.
 - Dark visual theme, keyboard-friendly navigation, semantic HTML, and accessible contrast.
 - Lightweight static portfolio without database, authentication, or backend services.
@@ -63,7 +66,7 @@ Included in the project today:
 - Resume download flow
 - Social media profile hub
 - Theme switcher or personalization settings
-- Contact form backend or analytics platform
+- Custom contact-form backend
 - CMS, database, or authentication layer
 
 ## Future enhancements
@@ -72,7 +75,7 @@ Included in the project today:
 - Include professional social profiles and a downloadable resume
 - Expand the case-study set as the portfolio grows
 - Improve metadata, Open Graph, and SEO details
-- Add a privacy-conscious contact solution only if it adds real value
+- Review the EmailJS contact flow and its privacy implications as the portfolio grows
 
 ## Success criteria
 

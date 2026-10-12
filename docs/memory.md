@@ -15,11 +15,12 @@ This repository contains Harnish Prajapati's active developer portfolio. It is a
 ## Current state
 
 - The homepage includes the full visitor journey from introduction through contact.
+- The `/projects` page lists the complete project catalog, while the homepage highlights the first three records.
 - The portfolio includes four featured projects with dedicated dynamic detail routes.
 - Content is centralized in `data/portfolio.ts` and `data/projects.ts` with matching types in `types/`.
 - Reusable section components live under `components/`.
 - The profile image is stored at `public/profile.jpg`.
-- There is no backend, database, CMS, authentication layer, or form service.
+- There is no custom backend, database, or CMS. The contact form uses EmailJS, and the site includes Vercel Analytics.
 
 ## Key decisions
 

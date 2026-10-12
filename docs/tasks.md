@@ -10,9 +10,11 @@ The portfolio is in an active, documented MVP stage. The site is built, stable, 
 - [x] Build the responsive homepage with hero, about, career, experience, skills, projects, goals, and contact sections.
 - [x] Add owner identity, profile image, summary content, and contact details.
 - [x] Add four featured project case studies with dedicated dynamic routes.
+- [x] Add the all-projects index route at `/projects`.
 - [x] Centralize portfolio and project content through `data/` and `types/` files.
 - [x] Reuse components to create a maintainable portfolio structure.
 - [x] Apply the dark developer-focused visual system and responsive layout.
+- [x] Add the EmailJS contact form and Vercel Analytics integration.
 - [x] Validate the project with `npm run lint` and `npm run build`.
 - [x] Align the README and project documentation with the current implementation.
 

@@ -13,6 +13,7 @@
 - Keep page routes in `app/` and use the Next.js App Router pattern.
 - Store reusable content in `data/` and model it with `types/`.
 - Keep static assets in `public/` and update references when files change.
+- Store project preview images in `public/projects/` and use a configured accent fallback when an image is unavailable.
 - Use `next/link` for internal navigation and standard external links for email and repositories.
 
 ## Styling rules
@@ -43,3 +44,4 @@
 - Do not leave sample or placeholder content in the live portfolio.
 - Prefer concise, evidence-based descriptions with concrete technologies, responsibilities, and outcomes.
 - Verify repository URLs, emails, and project details before publishing.
+- Configure and verify `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`, and `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` before publishing the contact form.
