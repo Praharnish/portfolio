@@ -57,6 +57,7 @@ export default function Hero() {
                             <div className="relative flex h-full items-center justify-center rounded-[1.5rem] border border-white/10 bg-[#0b1020]">
                                 <div className="flex h-48 w-40 items-center justify-center rounded-full border border-violet-400/40 bg-gradient-to-br from-violet-500 via-purple-500 to-cyan-400 p-1 shadow-[0_0_35px_rgba(168,85,247,0.7)]">
                                     <Image
+                                    loading="eager"
                                     src={profileImage}
                                     alt="Harnish Prajapati"
                                     width={160}

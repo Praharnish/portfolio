@@ -77,10 +77,10 @@ export default async function ProjectPage({
           <section className="mt-10">
             <div className="relative aspect-video w-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_20px_60px_rgba(15,23,42,0.5)]">
               <Image
+                loading="lazy"
                 src={project.image}
                 alt={`${project.title} project preview`}
                 fill
-                priority
                 sizes="(max-width: 768px) 100vw, 1024px"
                 className="object-cover"
               />

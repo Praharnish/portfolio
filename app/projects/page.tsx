@@ -44,6 +44,7 @@ export default function AllProjectsPage() {
                             <div className="relative aspect-video w-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_20px_60px_rgba(15,23,42,0.5)]">
                                 {project.image ? (
                                     <Image
+                                        loading="eager"
                                         src={project.image}
                                         alt={project.title}
                                         fill
