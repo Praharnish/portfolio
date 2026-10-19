@@ -7,6 +7,7 @@ import Skills from "@/components/skills";
 import Projects from "@/components/projects";
 import Goals from "@/components/goals";
 import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -31,12 +32,9 @@ export default function Home() {
 
         <Contact />
 
-        {/* FOOTER */}
-        <footer className="mt-12 border-t border-white/10 py-8 text-center text-sm text-slate-500">
-          © {new Date().getFullYear()} Harnish Prajapati.
-        </footer>
-
       </main>
+
+      <Footer />
     </div>
   );
 }
