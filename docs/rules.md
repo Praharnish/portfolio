@@ -14,7 +14,7 @@
 - Store reusable content in `data/` and model it with `types/`.
 - Keep static assets in `public/` and update references when files change.
 - Store project preview images in `public/projects/` and use a configured accent fallback when an image is unavailable.
-- Use `next/link` for internal navigation and standard external links for email and repositories.
+- Use `next/link` for page-to-page navigation, section buttons for same-page scrolling, and standard external links for email, social profiles, and repositories.
 
 ## Styling rules
 

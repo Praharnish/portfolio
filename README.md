@@ -8,9 +8,11 @@ Production deployment:
 
 <https://portfolio-praharnishs-projects.vercel.app/>
 
-## Current stage
+## Project status
 
-This project is in its active portfolio-MVP stage: the homepage, reusable sections, and dynamic project detail pages are complete, and the content is organized through centralized data modules instead of being embedded in page components.
+This project is an active portfolio MVP. The homepage, project index, and
+generated project detail pages are complete. Content is organized through
+centralized, typed data modules instead of being embedded in page components.
 
 ## Included features
 
@@ -21,6 +23,7 @@ This project is in its active portfolio-MVP stage: the homepage, reusable sectio
 - Reusable components and typed content data for maintainability
 - Dark, developer-focused visual design with Tailwind utilities
 - EmailJS-powered contact form and external repository links
+- Sticky navigation and footer with section links, social profiles, email, and resume download
 - Vercel Analytics integration
 
 ## Stack
@@ -46,6 +49,11 @@ NEXT_PUBLIC_EMAILJS_SERVICE_ID
 NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
 NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 ```
+
+Create a `.env.local` file in the project root and provide values for all three
+variables before testing the contact form. These values are intentionally
+public client-side configuration values; do not place private service
+credentials in the browser bundle.
 
 ## Getting started
 
@@ -84,6 +92,9 @@ Open <http://localhost:3000> in the browser.
 | `/projects/super-mario-bros` | Game project case study |
 | `/projects/[slug]` | Dynamic project route with fallback not-found state |
 
+The detailed route hierarchy and static/SSG rendering explanation are
+maintained in [docs/architecture.md](docs/architecture.md).
+
 ## Project structure
 
 ```text
@@ -103,6 +114,7 @@ portfolio/
 │   ├── experience.tsx
 │   ├── goals.tsx
 │   ├── hero.tsx
+│   ├── footer.tsx
 │   ├── navbar.tsx
 │   ├── projects.tsx
 │   └── skills.tsx
@@ -111,15 +123,19 @@ portfolio/
 │   ├── projects.ts
 │   ├── career.ts
 │   ├── experience.ts
+│   ├── navigation.ts
 │   └── skills.ts
 ├── types/
 │   ├── portfolio.ts
 │   ├── projects.ts
 │   ├── career.ts
 │   ├── experience.ts
+│   ├── navigation.ts
 │   └── skills.ts
 ├── public/
 │   ├── profile.jpg
+│   ├── resume.pdf
+│   ├── icons/
 │   └── projects/
 │       ├── interactive-recipe-book-v2.jpg
 │       ├── my-portfolio.jpg
@@ -140,15 +156,24 @@ portfolio/
 └── next-env.d.ts
 ```
 
-## Content and maintenance
+## Content ownership and maintenance
+
+Use the following source-of-truth files when updating content:
 
 - Update page-level structure in `app/page.tsx` and `app/projects/[slug]/page.tsx` only when the layout changes.
-- Maintain profile content, stats, and contact data in `data/portfolio.ts`.
-- Maintain project details in `data/projects.ts`.
+- `data/portfolio.ts` — identity, hero, stats, about, goals, and contact content.
+- `data/career.ts` — career-development cards.
+- `data/experience.ts` — employment history and achievements.
+- `data/skills.ts` — technology and capability list.
+- `data/projects.ts` — project summaries, details, links, technologies, and highlights.
+- `data/navigation.ts` — shared header and footer section links.
+- `components/footer.tsx` — social profile URLs and resume link.
 - The homepage shows the first three project records; `/projects` lists every record.
 - Add a project image under `public/projects/` and reference it from `data/projects.ts` when a preview is available. Projects without an image use their configured accent fallback.
 - Configure the three `NEXT_PUBLIC_EMAILJS_*` variables before testing the contact form.
 - Replace the profile photo at `public/profile.jpg` if needed.
+- Replace `public/resume.pdf` when publishing an updated resume.
+- Update the social profile URLs in `components/footer.tsx` when those profiles change.
 - Keep the implementation decisions and product requirements aligned with the files in `docs/`.
 
 ## Validation
@@ -160,9 +185,34 @@ npm run lint
 npm run build
 ```
 
-The current application state is a working, documentation-aligned portfolio with successful lint and production build checks.
+The latest recorded application checks completed successfully; run both commands again after application changes before publishing.
 
-## Documentation
+### Production build route output
+
+The production build currently generates the following routes:
+
+```text
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /projects
+└   /projects/[slug]
+  ├ ● /projects/my-portfolio
+  ├ ● /projects/interactive-recipe-book-v2
+  ├ ● /projects/enterprise-web-api-suite
+  └ ● /projects/super-mario-bros
+
+○  (Static) prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+```
+
+The dynamic project detail pages are statically generated from the project
+records in `data/projects.ts`. Adding a project record adds its slug to the
+generated route set.
+
+## Documentation map
+
+Each documentation file has a distinct purpose:
 
 - [Product requirements](docs/prd.md)
 - [Architecture](docs/architecture.md)
@@ -170,3 +220,7 @@ The current application state is a working, documentation-aligned portfolio with
 - [Coding rules](docs/rules.md)
 - [Tasks and progress](docs/tasks.md)
 - [Project context](docs/memory.md)
+
+Keep route and rendering details in the architecture document, product
+behavior in the PRD, visual behavior in the design document, coding standards
+in the rules document, and completed or planned work in the task document.

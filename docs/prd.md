@@ -27,17 +27,20 @@ The project is currently in an active portfolio-MVP stage. The site is fully fun
 1. A visitor lands on `/` and reads the hero, summary stats, and introduction.
 2. They scan the About, Career, Experience, Skills, and Projects sections.
 3. They click into a project card to view a dedicated case-study page.
-4. They review the technologies, highlights, and project repository link.
-5. They use the Contact section to reach out through email.
+4. They review the technologies, highlights, and any available live-site or repository links.
+5. They use the Contact section to submit a message through EmailJS, or use the email link in the footer.
+6. They can use the footer to visit the GitHub and LinkedIn profiles or download the resume.
 
 ## Current requirements
 
 - Responsive homepage with hero, about, career, experience, skills, projects, goals, contact, and footer sections.
 - In-page navigation between major homepage sections.
+- Sticky header navigation and footer quick links for the homepage sections.
 - A project index at `/projects` containing all project records.
 - Four featured projects with dedicated dynamic routes.
-- Project detail pages that present overview, highlights, technologies, and repository links.
+- Project detail pages that present overview, highlights, technologies, and optional live-site and repository links.
 - A contact form that submits through EmailJS when its public environment variables are configured.
+- Footer links for GitHub, LinkedIn, email, and the downloadable resume.
 - Privacy-conscious traffic measurement through Vercel Analytics.
 - Reusable component structure and centralized typed data in `data/` and `types/`.
 - Dark visual theme, keyboard-friendly navigation, semantic HTML, and accessible contrast.
@@ -57,14 +60,14 @@ Included in the project today:
 - Developer-focused landing page with portfolio sections
 - Reusable data-driven portfolio content
 - Four project pages for portfolio, recipe book, API suite, and game development work
-- Direct email-based contact path
+- EmailJS contact form and footer email link
+- GitHub and LinkedIn profile links
+- Downloadable resume at `/resume.pdf`
 - Clean project documentation and architecture references
 
 ## Out of scope today
 
 - Blog or article publishing system
-- Resume download flow
-- Social media profile hub
 - Theme switcher or personalization settings
 - Custom contact-form backend
 - CMS, database, or authentication layer
@@ -72,7 +75,6 @@ Included in the project today:
 ## Future enhancements
 
 - Add richer project media and measurable outcomes
-- Include professional social profiles and a downloadable resume
 - Expand the case-study set as the portfolio grows
 - Improve metadata, Open Graph, and SEO details
 - Review the EmailJS contact flow and its privacy implications as the portfolio grows

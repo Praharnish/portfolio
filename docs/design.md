@@ -37,9 +37,11 @@ The design uses bold, readable headings with generous spacing and section labels
 ## Interaction and accessibility
 
 - Navigation links scroll to major sections on the homepage.
+- The header remains sticky while the footer provides a second set of section links.
 - Project cards and repository links include clear hover treatment and native link behavior.
-- The contact form provides labeled fields, inline status feedback, and a disabled state while a message is sending.
+- The contact form provides labeled fields, inline status feedback, validation constraints, and a disabled state while a message is sending.
 - The profile image includes meaningful alt text.
+- Footer controls provide GitHub, LinkedIn, email, and resume-download actions with accessible labels.
 - Layouts stay predictable across screen sizes.
 - Semantic headings and accessible contrast are maintained across the interface.
 - External links open in a new tab when needed without reducing link clarity.

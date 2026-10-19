@@ -33,23 +33,28 @@ portfolio/
 │   ├── experience.tsx
 │   ├── goals.tsx
 │   ├── hero.tsx
+│   ├── footer.tsx
 │   ├── navbar.tsx
 │   ├── projects.tsx
 │   └── skills.tsx
 ├── data/
 │   ├── career.ts
 │   ├── experience.ts
+│   ├── navigation.ts
 │   ├── portfolio.ts
 │   ├── projects.ts
 │   └── skills.ts
 ├── types/
 │   ├── career.ts
 │   ├── experience.ts
+│   ├── navigation.ts
 │   ├── portfolio.ts
 │   ├── projects.ts
 │   └── skills.ts
 ├── public/
 │   ├── profile.jpg
+│   ├── resume.pdf
+│   ├── icons/
 │   └── projects/
 ├── docs/
 ├── README.md
@@ -61,16 +66,18 @@ portfolio/
 └── package-lock.json
 ```
 
-## App architecture
+## Application architecture
 
 - `app/layout.tsx` loads the Geist fonts, global metadata, and base HTML structure.
 - `app/page.tsx` assembles the homepage by composing the portfolio sections.
 - `app/projects/page.tsx` renders the complete project index from the shared project data.
 - `app/projects/[slug]/page.tsx` resolves a slug against the project data and renders a project detail page.
-- `components/` contains the reusable homepage sections and the navigation structure.
+- `components/` contains the reusable homepage sections, sticky navigation, contact form, and footer.
 - `data/` stores content used in the application, including portfolio data and project records.
+- `data/navigation.ts` is the shared navigation model used by the header and footer.
 - `types/` defines the TypeScript models used to structure the content.
-- `public/` stores static assets, including the profile image.
+- `public/` stores static assets, including the profile image, resume, social
+  icons, and project previews.
 
 ## Routing and rendering
 
@@ -78,21 +85,72 @@ portfolio/
 - `/projects` renders every project record in a dedicated index.
 - `/projects/[slug]` renders a detail page for each encoded project.
 - Unknown slugs fall back to a user-friendly `Project Not Found` state and a return link.
-- Rendering is static and server-driven with no API layer or client-side database dependency.
+- The homepage, project index, and fallback route are statically prerendered.
+- Project detail pages use `generateStaticParams` and are statically generated for every project record.
+- Rendering is server-driven with no API layer or client-side database dependency.
 - The contact form is a client component that submits to EmailJS using public environment variables.
 - Vercel Analytics is mounted in the root layout.
 
-## Data architecture
+## Content architecture
 
 The portfolio uses a centralized content model that keeps copy and project records organized:
 
 - `data/portfolio.ts` contains the profile, hero text, stats, and contact details.
 - `data/projects.ts` stores the featured project list, descriptions, repositories, highlights, and technologies.
+- `data/career.ts`, `data/experience.ts`, and `data/skills.ts` store the career, work-history, and skills content.
+- `data/navigation.ts` stores the shared section links rendered by the header and footer.
 - `components/` render the content rather than owning the copy directly.
 - `types/` enforce structure across the portfolio and project models.
-- `public/projects/` stores optional preview images; records without an image render an accent-gradient fallback.
+- `public/projects/` stores optional preview images; records without an image
+  render an accent-gradient fallback.
 
 This keeps updates simple and reduces risk of layout drift when content changes.
+
+## Build output and route map
+
+The current production build reports these route categories:
+
+```text
+○  (Static) prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+```
+
+The four current project slugs are emitted as static detail pages:
+
+- `/projects/my-portfolio`
+- `/projects/interactive-recipe-book-v2`
+- `/projects/enterprise-web-api-suite`
+- `/projects/super-mario-bros`
+
+### Route map
+
+| Route | Build type | What it represents |
+| --- | --- | --- |
+| `/` | `○ Static` | Main portfolio homepage |
+| `/_not-found` | `○ Static` | Fallback page for unknown routes |
+| `/projects` | `○ Static` | Index of every project record |
+| `/projects/my-portfolio` | `● SSG` | Generated project detail page |
+| `/projects/interactive-recipe-book-v2` | `● SSG` | Generated project detail page |
+| `/projects/enterprise-web-api-suite` | `● SSG` | Generated project detail page |
+| `/projects/super-mario-bros` | `● SSG` | Generated project detail page |
+
+```text
+Portfolio
+├── /                              ○ Static
+├── /_not-found                    ○ Static
+├── /projects                      ○ Static
+└── /projects/[slug]               ● SSG
+    ├── /projects/my-portfolio
+    ├── /projects/interactive-recipe-book-v2
+    ├── /projects/enterprise-web-api-suite
+    └── /projects/super-mario-bros
+```
+
+- `○ Static` means the page is prerendered as static content.
+- `● SSG` means the dynamic route is statically generated at build time using
+  `generateStaticParams`.
+- `/projects/[slug]` is the dynamic route template; each listed slug is
+  generated from a record in `data/projects.ts`.
 
 ## Styling approach
 
