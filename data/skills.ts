@@ -1,16 +1,25 @@
 export const skills: string[] = [
+  // Languages
+  "TypeScript",
+  "JavaScript",
+  "Python",
   "C#",
   "Java",
-  "Python",
-  "JavaScript",
-  "TypeScript",
+  "SQL",
+
+  // Frontend & Frameworks
   "React",
   "Next.js",
+  "Tailwind CSS",
+
+  // Backend & Databases
   "Node.js",
-  "SQL",
   "REST APIs",
   "MongoDB",
+  "PostgreSQL",
+
+  // DevOps & Tools
   "Docker",
-  "Unity",
   "Git & GitHub",
+  "Unity",
 ];

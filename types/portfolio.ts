@@ -1,3 +1,4 @@
+
 export type HeroItem = {
   label: string;
   title: string;
@@ -9,10 +10,30 @@ export type StatItem = {
   value: string;
 };
 
+export type AboutCard = {
+  icon: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  theme: "violet" | "orange" | "cyan";
+};
+
 export type AboutItem = {
   label: string;
   title: string;
-  paragraphs: string[];
+  intro: {
+    icon: string;
+    title: string;
+    subtitle: string;
+    paragraphs: string[];
+  };
+  cards: AboutCard[];
+  closing: {
+    icon: string;
+    title: string;
+    description: string;
+    theme: "violet" | "orange" | "cyan";
+  };
 };
 
 export type GoalsItem = {
