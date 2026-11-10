@@ -55,7 +55,7 @@ export const projects: Project[] = [
     slug: "interactive-recipe-book-v2",
     title: "Interactive Recipe Book V2",
     category: "Full-Stack Web Application",
-    date: "Jun 2026 - Present",
+    date: "Jun 2026 - Oct 2026",
 
     website: "https://interactive-recipe-book-v2.vercel.app",
     repository:

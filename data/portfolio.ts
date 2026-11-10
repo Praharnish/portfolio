@@ -83,34 +83,36 @@ export const portfolio = {
   } satisfies AboutItem,
 
 
+
   goals: {
     label: "What I'm Working Toward",
 
-    title: "Building the foundation for a software engineering career.",
+    title: "Growing into a software engineer who builds impactful, reliable software.",
 
     description:
-      "My immediate goal is to gain professional software development experience through a co-op or field placement. I'm focused on writing maintainable code, developing reliable applications, strengthening my backend and database skills, and learning how software teams build, test, and deliver software.",
+      "My immediate goal is to gain hands-on professional experience through a software development internship or placement. I'm focused on building scalable applications, writing clean and maintainable code, strengthening my backend and database expertise, and contributing to real-world projects. I want to grow alongside experienced engineers while continuously improving how I design, develop, test, and deliver software.",
 
     areas: [
       {
-        title: "Web & Full-Stack Development",
+        title: "Full-Stack & Web Engineering",
         description:
-          "React, TypeScript, Next.js, responsive interfaces, backend integration, and REST APIs",
+          "React, Next.js, TypeScript, JavaScript, Node.js, Express, responsive applications, RESTful APIs, and frontend-backend integration",
       },
 
       {
-        title: "Application & Game Development",
+        title: "Backend & Database Engineering",
         description:
-          "Java, C#, Android development, Unity, application logic, and interactive user experiences",
+          "API development, server-side architecture, authentication, authorization, PostgreSQL, MySQL, MongoDB, SQL optimization, and data management",
       },
 
       {
-        title: "Backend, Databases & Tools",
+        title: "Software Development & Engineering Practices",
         description:
-          "API design, SQL, PostgreSQL, MySQL, MongoDB, authentication, Docker, and Git",
+          "Java, Python, C#, object-oriented programming, data structures, algorithms, debugging, automated testing, Docker, Git, and CI/CD",
       },
     ],
   } satisfies GoalsItem,
+
 
   contact: {
     label: "Contact",

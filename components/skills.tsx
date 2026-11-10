@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -11,9 +10,10 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+import type { SkillCategoryIcon } from "@/types/skills";
 import { skills } from "@/data/skills";
 
-const categoryIcons: Record<string, LucideIcon> = {
+const categoryIcons: Record<SkillCategoryIcon, LucideIcon> = {
   code: Code2,
   monitor: Monitor,
   server: Server,
@@ -41,7 +41,7 @@ export default function Skills() {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {skills.categories.map((category) => {
-          const Icon = categoryIcons[category.icon] ?? Code2;
+          const Icon = categoryIcons[category.icon];
 
           return (
             <div
@@ -87,7 +87,6 @@ export default function Skills() {
                   </span>
                 ))}
               </div>
-
             </div>
           );
         })}

@@ -1,93 +1,111 @@
 import type { SkillsSection } from "@/types/skills";
 
 export const skills: SkillsSection = {
-  label: "Technical Skills",
-  title: "Technologies I work with",
+  label: "Technical Expertise",
+
+  title: "Technologies & Tools I Work With",
+
   description:
-    "A collection of tools and technologies I use to build web applications, work with data, and create practical software solutions.",
+    "A collection of programming languages, frameworks, databases, and development tools I've worked with through academic coursework and personal projects.",
+
   categories: [
     {
       id: "languages",
-      name: "Languages",
-      description: "Programming languages I use for development.",
+      name: "Programming Languages",
+      description:
+        "Languages used to build applications and solve programming problems.",
       icon: "code",
-      accentColor: "#B06AFF",
+      accentColor: "#A78BFA",
       skills: [
-        { id: "java", name: "Java", icon: "java" },
-        { id: "csharp", name: "C#", icon: "csharp" },
-        { id: "python", name: "Python", icon: "python" },
-        { id: "javascript", name: "JavaScript", icon: "javascript" },
-        { id: "typescript", name: "TypeScript", icon: "typescript" },
-        { id: "php", name: "PHP", icon: "php" },
+        { id: "java", name: "Java" },
+        { id: "python", name: "Python" },
+        { id: "typescript", name: "TypeScript" },
+        { id: "javascript", name: "JavaScript" },
+        { id: "csharp", name: "C#" },
+        { id: "php", name: "PHP" },
+        { id: "sql", name: "SQL" },
       ],
     },
+
     {
       id: "frontend",
-      name: "Frontend",
-      description: "Technologies for building user interfaces.",
+      name: "Frontend Development",
+      description:
+        "Building responsive interfaces and interactive web experiences.",
       icon: "monitor",
-      accentColor: "#22D3EE",
+      accentColor: "#38BDF8",
       skills: [
-        { id: "react", name: "React", icon: "react" },
-        { id: "nextjs", name: "Next.js", icon: "nextjs" },
-        { id: "html", name: "HTML", icon: "html" },
-        { id: "css", name: "CSS", icon: "css" },
-        { id: "bootstrap", name: "Bootstrap", icon: "bootstrap" },
-        { id: "tailwind", name: "Tailwind CSS", icon: "tailwind" },
+        { id: "reactjs", name: "React.js" },
+        { id: "nextjs", name: "Next.js" },
+        { id: "tailwind", name: "Tailwind CSS" },
+        { id: "bootstrap", name: "Bootstrap" },
+        { id: "vite", name: "Vite" },
       ],
     },
+
     {
       id: "backend",
-      name: "Backend & APIs",
-      description: "Server-side development and integrations.",
+      name: "Backend Development",
+      description:
+        "Developing server-side applications, APIs, and application logic.",
       icon: "server",
-      accentColor: "#2DD4BF",
+      accentColor: "#34D399",
       skills: [
-        { id: "nodejs", name: "Node.js", icon: "nodejs" },
-        { id: "express", name: "Express.js", icon: "express" },
-        { id: "rest", name: "REST APIs", icon: "rest" },
-        { id: "authentication", name: "Authentication", icon: "authentication" },
-        { id: "docker", name: "Docker", icon: "docker" },
+        { id: "nodejs", name: "Node.js" },
+        { id: "express", name: "Express.js" },
+        { id: "restapi", name: "REST APIs" },
+        { id: "jwt", name: "JWT Authentication" },
+        { id: "rbac", name: "Role-Based Access Control" },
       ],
     },
+
     {
       id: "databases",
       name: "Databases",
-      description: "Databases and data management systems.",
+      description:
+        "Working with relational and NoSQL databases for application data.",
       icon: "database",
       accentColor: "#FBBF24",
       skills: [
-        { id: "mysql", name: "MySQL", icon: "mysql" },
-        { id: "postgresql", name: "PostgreSQL", icon: "postgresql" },
-        { id: "sqlserver", name: "SQL Server", icon: "sqlserver" },
-        { id: "mongodb", name: "MongoDB", icon: "mongodb" },
+        { id: "postgresql", name: "PostgreSQL" },
+        { id: "mysql", name: "MySQL" },
+        { id: "mongodb", name: "MongoDB" },
+        { id: "sqlserver", name: "SQL Server" },
       ],
     },
+
     {
-      id: "tools",
-      name: "Development Tools",
-      description: "Tools I use to build, test, and manage applications.",
-      icon: "tools",
+      id: "mobile",
+      name: "Mobile & Application Development",
+      description:
+        "Developing mobile applications and interactive application experiences.",
+      icon: "mobile",
       accentColor: "#F472B6",
       skills: [
-        { id: "git", name: "Git", icon: "git" },
-        { id: "github", name: "GitHub", icon: "github" },
-        { id: "vscode", name: "VS Code", icon: "vscode" },
-        { id: "postman", name: "Postman", icon: "postman" },
-        { id: "figma", name: "Figma", icon: "figma" },
-        { id: "jira", name: "Jira", icon: "jira" },
+        { id: "flutter", name: "Flutter" },
+        { id: " dart", name: "Dart" },
+        { id: "kotlin", name: "Kotlin" },
+        { id: "reactnative", name: "React Native" },
+        { id: "unity", name: "Unity" },
       ],
     },
+
     {
-      id: "mobile-game",
-      name: "Mobile & Game Dev",
-      description: "Mobile application and game development technologies.",
-      icon: "mobile",
-      accentColor: "#60A5FA",
+      id: "tools",
+      name: "Tools & Development Practices",
+      description:
+        "Tools and workflows supporting development, testing, and deployment.",
+      icon: "tools",
+      accentColor: "#FB923C",
       skills: [
-        { id: "android", name: "Java (Android)", icon: "android" },
-        { id: "flutter", name: "Flutter", icon: "flutter" },
-        { id: "unity", name: "Unity", icon: "unity" },
+        { id: "git", name: "Git" },
+        { id: "github", name: "GitHub" },
+        { id: "jira", name: "Jira" },
+        { id: "docker", name: "Docker" },
+        { id: "cicd", name: "CI/CD" },
+        { id: "testing", name: "Automated Testing" },
+        { id: "cloudinary", name: "Cloudinary" },
+        { id: "aws", name: "AWS" },
       ],
     },
   ],
